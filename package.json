@@ -2,7 +2,7 @@
   "name": "lokalny-bazarek",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://github.com/Przemek8686/LocalnyBazarek",
+  "homepage": "https://przemek8686.github.io/LocalnyBazarek/",
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
