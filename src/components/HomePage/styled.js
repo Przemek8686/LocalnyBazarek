@@ -1,12 +1,12 @@
 import styled from "styled-components";
 
-
 export const ProductGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   grid-gap: 45px;
   margin: 20px 15px;
 `;
+
 export const Button = styled.button`
   padding: 10px 20px;
   background-color: #1f5156;
@@ -29,7 +29,6 @@ export const Button = styled.button`
   }
 `;
 
-
 export const ProductTile = styled.div`
   border: 1px solid #ccc;
   padding: 10px;
@@ -47,17 +46,17 @@ export const ProductTile = styled.div`
 
 export const UserProfile = styled.div`
   position: absolute;
-  right: 10px;
-  bottom: 10px;
+  bottom: 10px; /* Przesunięcie na sam dół */
+  left: 10px; /* Przesunięcie na lewo */
   display: flex;
-  align-items: center;
+  flex-direction: column; /* Układ pionowy */
 `;
 
 export const UserImage = styled.img`
   width: 30px;
   height: 30px;
   border-radius: 50%;
-  margin-right: 5px;
+  margin-bottom: 5px; /* Odstęp między obrazkiem użytkownika a nazwą użytkownika */
 `;
 
 export const UserName = styled.span`
@@ -108,10 +107,10 @@ export const LocationInfo = styled.div`
 export const SearchInput = styled.input`
   padding: 0.5em;
   margin: 0 auto;
-  border:3px solid #1f5156 ;
+  border: 3px solid #1f5156;
   border-radius: 20px;
   margin-top: 10px;
   width: 330px;
-  height:20px;
+  height: 20px;
   display: block;
 `;
