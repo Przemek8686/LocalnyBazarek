@@ -46,10 +46,11 @@ export const ProductTile = styled.div`
 
 export const UserProfile = styled.div`
   position: absolute;
-  bottom: 10px; /* Przesunięcie na sam dół */
-  left: 10px; /* Przesunięcie na lewo */
+  margin-bottom: 10px; /* Przesunięcie na sam dół */
+  left: 3px; /* Przesunięcie na lewo */
   display: flex;
   flex-direction: column; /* Układ pionowy */
+  margin-top:20px;
 `;
 
 export const UserImage = styled.img`
