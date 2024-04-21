@@ -50,8 +50,7 @@ const App = () => (
    
       <Navigation />
       <Routes>
-       
-        <Route path="/login" element={<LoginPage />} />
+       <Route path="/login" element={<LoginPage />} />
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/add-offer" element={<AddOfferPage />} />
         <Route path="/offer/:id" element={<OfferDetailsPage />} /> 
