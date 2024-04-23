@@ -37,7 +37,7 @@ export const ProductTile = styled.div`
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
   background-color: white;
   position: relative;
-  height: 400px; /* Stała wysokość dla kafelka */
+  height: 435px; /* Stała wysokość dla kafelka */
 
   &:hover {
     transform: scale(1.05);
@@ -47,10 +47,11 @@ export const ProductTile = styled.div`
 export const UserProfile = styled.div`
   position: absolute;
   margin-bottom: 10px; /* Przesunięcie na sam dół */
-  left: 3px; /* Przesunięcie na lewo */
+  left: 6px; /* Przesunięcie na lewo */
   display: flex;
-  flex-direction: column; /* Układ pionowy */
-  margin-top:20px;
+  flex-direction: row; /* Układ pionowy */
+  margin-top:60px;
+  font-weight: bold;
 `;
 
 export const UserImage = styled.img`
@@ -61,7 +62,8 @@ export const UserImage = styled.img`
 `;
 
 export const UserName = styled.span`
-  font-size: 0.8em;
+  font-size: 1.1em;
+  margin-left:5px;
 `;
 
 export const ProductImageContainer = styled.div`
