@@ -61,3 +61,41 @@ export const UserName = styled.span`
   font-size: 1.2em;
   font-weight: bold;
 `;
+
+export const Modal = styled.div`
+  display: ${(props) => (props.modalOpen ? "block" : "none")};
+  position: fixed;
+  z-index: 999;
+  padding-top: 50px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.9);
+`;
+
+export const ModalContent = styled.div`
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 548px;
+  border: 1px solid #888;
+  background-color: #fefefe;
+  padding: 9px;
+`;
+
+export const CloseButton = styled.span`
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+
+  &:hover,
+  &:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+`;

@@ -5,6 +5,18 @@ export const ProductGrid = styled.div`
   grid-template-columns: repeat(5, 1fr);
   grid-gap: 45px;
   margin: 20px 15px;
+
+  @media screen and (max-width: 1200px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @media screen and (max-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media screen and (max-width: 480px) {
+    grid-template-columns: repeat(1, 1fr);
+  }
 `;
 
 export const Button = styled.button`
@@ -30,26 +42,45 @@ export const Button = styled.button`
 `;
 
 export const ProductTile = styled.div`
+  position: relative;
   border: 1px solid #ccc;
   padding: 10px;
   box-sizing: border-box;
   transition: transform 0.3s ease-in-out;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
   background-color: white;
-  position: relative;
-  height: 435px; /* Stała wysokość dla kafelka */
+  height: 435px;
+  border: 4px solid #1f5156;
+  overflow: hidden;
 
   &:hover {
     transform: scale(1.05);
   }
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+  }
+
+  &:hover::before {
+    opacity: 1;
+  }
 `;
+
 
 export const UserProfile = styled.div`
   position: absolute;
-  margin-bottom: 10px; /* Przesunięcie na sam dół */
-  left: 6px; /* Przesunięcie na lewo */
+  margin-bottom: 10px;
+  left: 6px;
   display: flex;
-  flex-direction: row; /* Układ pionowy */
+  flex-direction: row;
   margin-top:60px;
   font-weight: bold;
 `;
@@ -58,7 +89,7 @@ export const UserImage = styled.img`
   width: 30px;
   height: 30px;
   border-radius: 50%;
-  margin-bottom: 5px; /* Odstęp między obrazkiem użytkownika a nazwą użytkownika */
+  margin-bottom: 5px;
 `;
 
 export const UserName = styled.span`
@@ -67,9 +98,9 @@ export const UserName = styled.span`
 `;
 
 export const ProductImageContainer = styled.div`
-  width: 100%; /* Stała szerokość kontenera */
-  height: 200px; /* Stała wysokość kontenera */
-  overflow: hidden; /* Zapobiega wyjściu zdjęć poza kontener */
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
 `;
 
 export const ProductImage = styled.img`
@@ -117,3 +148,4 @@ export const SearchInput = styled.input`
   height: 20px;
   display: block;
 `;
+

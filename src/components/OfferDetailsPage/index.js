@@ -1,15 +1,14 @@
 import React from "react";
 import { useParams } from "react-router-dom";
-import {OfferDetailsContainer,OfferTitle,OfferImage,OfferDescription,StyledInfo,UserContainer,UserImage,UserName} from "./styled";
+import { OfferDetailsContainer, OfferTitle, OfferImage, OfferDescription, StyledInfo, UserContainer, UserImage, UserName, Modal, ModalContent, CloseButton } from "./styled";
 import { db } from "../FirebaseConfig";
 import { doc, getDoc } from "firebase/firestore";
-
-
 
 const OfferDetailsPage = () => {
   const { id } = useParams();
 
   const [offerDetails, setOfferDetails] = React.useState(null);
+  const [modalOpen, setModalOpen] = React.useState(false);
 
   React.useEffect(() => {
     const fetchOfferDetails = async () => {
@@ -35,7 +34,13 @@ const OfferDetailsPage = () => {
       {offerDetails ? (
         <>
           <OfferTitle>{offerDetails.title}</OfferTitle>
-          <OfferImage src={offerDetails.imageUrl} alt={offerDetails.title} />
+          {offerDetails.imageUrl && (
+            <OfferImage
+              src={offerDetails.imageUrl}
+              alt={offerDetails.title}
+              onClick={() => setModalOpen(true)}
+            />
+          )}
           <OfferDescription>{offerDetails.description}</OfferDescription>
           <StyledInfo>Price: {offerDetails.price}</StyledInfo>
           <StyledInfo>Unit: {offerDetails.unit}</StyledInfo>
@@ -43,13 +48,23 @@ const OfferDetailsPage = () => {
           <StyledInfo>Category: {offerDetails.category}</StyledInfo>
           <StyledInfo>Location: {offerDetails.location}</StyledInfo>
           <UserContainer>
-            <UserImage src={offerDetails.userImage} alt={offerDetails.userName} />
+            {offerDetails.userImage && (
+              <UserImage src={offerDetails.userImage} alt={offerDetails.userName} />
+            )}
             <UserName>{offerDetails.userName}</UserName>
           </UserContainer>
         </>
       ) : (
         <p>Loading...</p>
       )}
+      <Modal modalOpen={modalOpen} onClick={() => setModalOpen(false)}>
+        {offerDetails && offerDetails.imageUrl && ( // Sprawdzenie, czy offerDetails i jego właściwość imageUrl istnieją
+          <ModalContent>
+            <CloseButton onClick={() => setModalOpen(false)}>&times;</CloseButton>
+            <OfferImage src={offerDetails.imageUrl} alt={offerDetails.title} />
+          </ModalContent>
+        )}
+      </Modal>
     </OfferDetailsContainer>
   );
 };

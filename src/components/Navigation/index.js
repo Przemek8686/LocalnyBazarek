@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   NavigationBar,
   TitleContainer,
@@ -6,33 +6,47 @@ import {
   Title,
   Spacer,
   StyledLink,
+  MenuIcon,
+  NavLinksContainer,
 } from "./styled";
 import logo from "../../Images/logo2.png";
 
-const Navigation = () => (
-  <NavigationBar>
-    <TitleContainer>
-      <Logo src={logo} alt="Logo" />
-      <Title>Lokalny Bazarek</Title> {/* Dodaj napis Lokalny Bazarek */}
-    </TitleContainer>
-    <Spacer />
-    <div>
-      <StyledLink to="/" activeClassName="active" exact>
-        Home
-      </StyledLink>
-      <StyledLink to="/login" activeClassName="active">
-        Login
-      </StyledLink>
-      <StyledLink to="/register" activeClassName="active">
-        Register
-      </StyledLink>
+const Navigation = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-      <StyledLink to="/add-offer" activeClassName="active">
-        Add Offer
-      </StyledLink>
-    </div>
-    <Spacer />
-  </NavigationBar>
-);
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
+  return (
+    <NavigationBar>
+      <TitleContainer>
+        <Logo src={logo} alt="Logo" />
+        <Title>Lokalny Bazarek</Title>
+      </TitleContainer>
+      <Spacer />
+      <MenuIcon onClick={toggleMenu}>
+        <span></span>
+        <span></span>
+        <span></span>
+      </MenuIcon>
+      <NavLinksContainer isMenuOpen={isMenuOpen}>
+        <StyledLink to="/" activeClassName="active" exact>
+          Oferty
+        </StyledLink>
+        <StyledLink to="/add-offer" activeClassName="active">
+          Dodaj Ofertę
+        </StyledLink>
+        <StyledLink to="/login" activeClassName="active">
+          Logowanie
+        </StyledLink>
+        <StyledLink to="/register" activeClassName="active">
+          Rejestracja
+        </StyledLink>
+      </NavLinksContainer>
+      <Spacer />
+    </NavigationBar>
+  );
+};
 
 export default Navigation;
