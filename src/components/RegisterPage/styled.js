@@ -1,4 +1,4 @@
-import styled, { keyframes } from 'styled-components';
+import styled, { keyframes } from "styled-components";
 
 export const Container = styled.div`
   display: flex;
@@ -34,11 +34,13 @@ export const RegisterForm = styled.form`
   font-weight: bold;
 
   @media (max-width: 768px) {
- margin:3%;
+    margin: 3%;
   }
 `;
 
 export const WelcomeMessage = styled.h2`
+  font-size: 12px;
+  font-weight: bold;
   color: #1f5156;
 `;
 
