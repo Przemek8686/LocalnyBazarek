@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/LocalnyBazarek/static/css/main.e6c13ad2.css",
-    "main.js": "/LocalnyBazarek/static/js/main.5b14b5d6.js",
+    "main.js": "/LocalnyBazarek/static/js/main.42495ace.js",
     "static/media/logo2.png": "/LocalnyBazarek/static/media/logo2.b0b1ddcef264f4bbe9f2.png",
     "static/media/obraz.jpg": "/LocalnyBazarek/static/media/obraz.7d57ebfb3410d4f03d79.jpg",
     "static/media/logo.jpg": "/LocalnyBazarek/static/media/logo.87a8125fe205159e96da.jpg",
     "index.html": "/LocalnyBazarek/index.html",
     "main.e6c13ad2.css.map": "/LocalnyBazarek/static/css/main.e6c13ad2.css.map",
-    "main.5b14b5d6.js.map": "/LocalnyBazarek/static/js/main.5b14b5d6.js.map"
+    "main.42495ace.js.map": "/LocalnyBazarek/static/js/main.42495ace.js.map"
   },
   "entrypoints": [
     "static/css/main.e6c13ad2.css",
-    "static/js/main.5b14b5d6.js"
+    "static/js/main.42495ace.js"
   ]
 }
