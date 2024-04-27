@@ -133,7 +133,7 @@ const AddProductForm = () => {
               <option value="warzywa">Warzywa</option>
               <option value="przetwory">Przetwory</option>
               <option value="wypieki">Wypieki</option>
-              <option value="rosliny ozdobne">Rośliny ozdobne</option>
+              <option value="rośliny ozdobne">Rośliny ozdobne</option>
               <option value="pozostale">Pozostałe</option>
             </CategorySelect>
             <Input
