@@ -5,7 +5,7 @@ import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import { getAuth } from "firebase/auth"; // Import getAuth
 
 import { Container, Form, LogoContainer, Logo, Title, SuccessMessage, Loading, Input, TextArea, CategorySelect, Button } from "./styled";
-import logo from "../../Images/logo.jpg";
+import logo from "../../Images/logo2.png";
 
 const AddProductForm = () => {
   const [title, setTitle] = useState("");

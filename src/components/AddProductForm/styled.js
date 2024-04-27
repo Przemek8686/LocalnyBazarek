@@ -20,7 +20,7 @@ export const Form = styled.form`
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3); /* Zmniejszenie rozmycia cienia */
   background-color: white;
   font-weight: bold;
-  margin-top: 120px; /* Zmniejszenie odstępu od góry */
+  margin-top: 150px; /* Zmniejszenie odstępu od góry */
 `;
 
 export const Input = styled.input`
