@@ -69,8 +69,10 @@ export const ProductTile = styled.div`
     transition: opacity 0.3s ease-in-out;
   }
 
-  &:hover::before {
-    opacity: 1;
+  @media (min-width: 768px) {
+    &:hover::before {
+      opacity: 1;
+    }
   }
 `;
 
@@ -86,10 +88,11 @@ export const UserProfile = styled.div`
 `;
 
 export const UserImage = styled.img`
-  width: 30px;
-  height: 30px;
+width: 30px;
+height: 30px;
   border-radius: 50%;
   margin-bottom: 5px;
+  object-fit: cover;
 `;
 
 export const UserName = styled.span`
