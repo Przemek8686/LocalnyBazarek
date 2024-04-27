@@ -60,7 +60,7 @@ const RegisterPage = () => {
 
   return (
     <Container>
-      <RegisterTitle>Rejestracja Profilu</RegisterTitle>
+      
       <RegisterForm onSubmit={handleSubmit}>
         {loading ? (
           <Loading />
@@ -68,6 +68,7 @@ const RegisterPage = () => {
           <WelcomeMessage>Witamy w "Lokalny Bazarek"</WelcomeMessage>
         ) : (
           <>
+          <RegisterTitle>Rejestracja Profilu</RegisterTitle>
             <LogoContainer>
               <Logo src={logo} alt="Logo" />
               <Title>Lokalny Bazarek</Title>

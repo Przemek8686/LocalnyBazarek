@@ -47,8 +47,7 @@ const GlobalStyles = createGlobalStyle`
 const App = () => (
   <Router>
     <GlobalStyles />
-   
-      <Navigation />
+   <Navigation />
       <Routes>
        <Route path="/login" element={<LoginPage />} />
         <Route path="/register" element={<RegisterPage />} />

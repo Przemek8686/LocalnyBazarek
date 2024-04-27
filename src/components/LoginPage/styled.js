@@ -98,3 +98,13 @@ export const Loading = styled.div`
   height: 30px;
   animation: ${rotate} 2s linear infinite;
 `;
+export const LoginTitle = styled.h1`
+  font-size: 2em;
+  color: #1f5156;
+  margin-bottom: 20px;
+  background-color: white;
+  border: 2px solid #1f5156;
+  border-radius: 10px;
+  padding: 10px;
+  box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.3);
+`;

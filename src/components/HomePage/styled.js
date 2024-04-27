@@ -22,14 +22,14 @@ export const ProductGrid = styled.div`
 export const Button = styled.button`
   padding: 10px 20px;
   background-color: #1f5156;
-  color: #f5b921;
-  border: none;
+  color: white;
+  border: 3px solid white;
   cursor: pointer;
   text-align: center;
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
-  margin: 10px 2px;
+  margin: 10px 25%;
   transition-duration: 0.4s;
   margin-bottom: 40px;
   border-radius: 12px;

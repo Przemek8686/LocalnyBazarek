@@ -13,14 +13,14 @@ export const Form = styled.form`
   align-items: center;
   justify-content: center;
   width: 315px; /* Zmniejszenie szerokości formularza */
-  height: 700px; /* Zmniejszenie wysokości formularza */
+  height: 650px; /* Zmniejszenie wysokości formularza */
   border: 2px solid #1f5156;
   border-radius: 8px; /* Zmniejszenie promienia zaokrąglenia */
   padding: 16px; /* Zmniejszenie wewnętrznego marginesu */
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3); /* Zmniejszenie rozmycia cienia */
   background-color: white;
   font-weight: bold;
-  margin-top: 140px; /* Zmniejszenie odstępu od góry */
+  margin-top: 55px; /* Zmniejszenie odstępu od góry */
 `;
 
 export const Input = styled.input`

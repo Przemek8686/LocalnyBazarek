@@ -82,6 +82,7 @@ const HomePage = () => {
                 <ContactInfo>Kontakt: {product.contact}</ContactInfo>
                 <AdditionalInfo>Kategoria: {product.category}</AdditionalInfo>
                 <LocationInfo>Lokalizacja: {product.location}</LocationInfo>
+              
               </ProductTile>
             </Link>
             {auth.currentUser && auth.currentUser.displayName === product.userName && (
