@@ -76,7 +76,7 @@ const RegisterPage = () => {
 
             <Input
               type="text"
-              placeholder="Username"
+              placeholder="Nazwa Użytkownika"
               value={username}
               onChange={(e) => setUsername(e.target.value)}
             />
@@ -93,7 +93,7 @@ const RegisterPage = () => {
             />
             <Input
               type="password"
-              placeholder="Password"
+              placeholder="hasło min. 6 znaków"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             />

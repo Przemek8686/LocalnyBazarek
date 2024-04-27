@@ -118,8 +118,9 @@ export const ProductTitle = styled.h2`
 `;
 
 export const ProductPrice = styled.p`
-  font-size: 1em;
+  font-size: 1.0em;
   font-weight: bold;
+  color:red;
 `;
 
 export const ProductUnit = styled.p`

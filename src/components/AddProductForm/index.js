@@ -112,6 +112,7 @@ const AddProductForm = () => {
               <option value="szt">szt</option>
               <option value="ml">ml</option>
               <option value="l">l</option>
+              <option value="inne">inne</option>
             </CategorySelect>
             <Input
               type="text"

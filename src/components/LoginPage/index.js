@@ -81,7 +81,7 @@ const LoginPage = () => {
               />
               <Input
                 type="password"
-                placeholder="Password"
+                placeholder="Hasło min. 6 znaków"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 autoComplete="off" // Disable auto-fill
