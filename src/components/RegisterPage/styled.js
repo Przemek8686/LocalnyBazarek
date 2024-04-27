@@ -32,6 +32,10 @@ export const RegisterForm = styled.form`
   box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.3);
   background-color: white;
   font-weight: bold;
+
+  @media (max-width: 768px) {
+ margin:3%;
+  }
 `;
 
 export const WelcomeMessage = styled.h2`

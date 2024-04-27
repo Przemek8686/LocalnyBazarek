@@ -13,6 +13,14 @@ export const OfferDetailsContainer = styled.div`
   width: 100%;
   margin: 20px auto;
   height: auto;
+
+  @media screen and (max-width: 768px) {
+    /* Style changes for smaller screens */
+    padding: 10px;
+    border-width: 2px;
+    border-radius: 8px;
+    max-width: 335px;
+  }
 `;
 
 export const OfferImage = styled.img`
@@ -23,6 +31,15 @@ export const OfferImage = styled.img`
   border: 4px solid #1f5156;
   border-radius: 10px;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.6);
+
+  @media screen and (max-width: 768px) {
+    /* Style changes for smaller screens */
+    max-width: 300px;
+    margin-bottom: 10px;
+    border-width: 2px;
+    border-radius: 8px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.4);
+  }
 `;
 
 export const OfferTitle = styled.h2`

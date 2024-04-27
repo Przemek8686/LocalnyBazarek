@@ -25,6 +25,10 @@ export const Login = styled.form`
   box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.3);
   background-color: white;
   font-weight: bold;
+
+  @media (max-width: 768px) {
+    margin:0%;
+  }
 `;
 
 export const LogoContainer = styled.div`
@@ -86,6 +90,10 @@ export const Button = styled.button`
     background-color: #378d95;
     color: white;
     border: 2px solid #4caf50;
+  }
+
+  @media (max-width: 768px) {
+margin-left:5px;
   }
 `;
 

@@ -14,7 +14,7 @@ export const NavigationBar = styled.nav`
   @media (max-width: 768px) {
     flex-direction: column;
     align-items: center;
-    padding: 1em;
+    padding: 1em 11em;
   }
 `;
 
@@ -42,6 +42,8 @@ export const StyledLink = styled(NavLink)`
   /* Media query dla mniejszych rozdzielczości */
   @media (max-width: 768px) {
     font-size: 0.7em;
+   
+  
   }
 
   &.active {
@@ -84,7 +86,9 @@ export const MenuIcon = styled.div`
   /* Media query dla mniejszych rozdzielczości */
   @media (max-width: 768px) {
     display: flex;
+    margin-top:10px;
   }
+
 `;
 
 export const NavLinksContainer = styled.div`
