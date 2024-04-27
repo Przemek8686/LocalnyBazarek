@@ -4,7 +4,7 @@ import { collection, addDoc } from "firebase/firestore";
 import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import { getAuth } from "firebase/auth"; // Import getAuth
 
-import { Container, Form, LogoContainer, Logo, Title, SuccessMessage, Loading, Input, TextArea, CategorySelect, Button } from "./styled";
+import { Container, Form,CheckIcon, LogoContainer, Logo, Title, SuccessMessage, Loading, Input, TextArea, CategorySelect, Button } from "./styled";
 import logo from "../../Images/logo2.png";
 
 const AddProductForm = () => {
@@ -82,7 +82,7 @@ const AddProductForm = () => {
         </LogoContainer>
         {success ? (
           <SuccessMessage>
-            Oferta dodana <span>&#10004;</span>
+            Oferta dodana <CheckIcon>&#10004;</CheckIcon>
           </SuccessMessage>
         ) : loading ? (
           <Loading />

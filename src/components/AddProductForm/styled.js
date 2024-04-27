@@ -22,7 +22,9 @@ export const Form = styled.form`
   font-weight: bold;
   margin-top: 150px; /* Zmniejszenie odstępu od góry */
 `;
-
+export const CheckIcon = styled.span`
+  margin-left: 5px; 
+`;
 export const Input = styled.input`
   margin-bottom: 8px; /* Zmniejszenie odstępu między elementami */
   padding: 8px; /* Zmniejszenie wewnętrznego marginesu */

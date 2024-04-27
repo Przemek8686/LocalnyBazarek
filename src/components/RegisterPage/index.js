@@ -97,7 +97,7 @@ const RegisterPage = () => {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             />
-            <Button type="submit">Register</Button>
+            <Button type="submit">Rejestracja</Button>
           </>
         )}
       </RegisterForm>
