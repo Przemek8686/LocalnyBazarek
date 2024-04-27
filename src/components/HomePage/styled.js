@@ -92,7 +92,7 @@ width: 30px;
 height: 30px;
   border-radius: 50%;
   margin-bottom: 5px;
-  object-fit: cover;
+
 `;
 
 export const UserName = styled.span`
@@ -108,7 +108,8 @@ export const ProductImageContainer = styled.div`
 
 export const ProductImage = styled.img`
   width: 100%;
-  height: auto;
+  height: 100%;
+  object-fit: cover; /* Dostosowanie obrazu do wymiarów kontenera */
 `;
 
 export const ProductTitle = styled.h2`
