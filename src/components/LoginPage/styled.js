@@ -29,6 +29,11 @@ export const Login = styled.form`
   @media (max-width: 768px) {
     margin:0%;
   }
+  
+  @media (max-width: 414px) {
+    width: 309px;
+  }
+
 `;
 
 export const LogoContainer = styled.div`
