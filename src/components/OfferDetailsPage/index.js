@@ -42,11 +42,11 @@ const OfferDetailsPage = () => {
             />
           )}
           <OfferDescription>{offerDetails.description}</OfferDescription>
-          <StyledInfo>Price: {offerDetails.price}</StyledInfo>
-          <StyledInfo>Unit: {offerDetails.unit}</StyledInfo>
-          <StyledInfo>Contact: {offerDetails.contact}</StyledInfo>
-          <StyledInfo>Category: {offerDetails.category}</StyledInfo>
-          <StyledInfo>Location: {offerDetails.location}</StyledInfo>
+          <StyledInfo>Cena w zł: {offerDetails.price}</StyledInfo>
+          <StyledInfo>Waga: {offerDetails.unit}</StyledInfo>
+          <StyledInfo>Kontakt: {offerDetails.contact}</StyledInfo>
+          <StyledInfo>Kategoria: {offerDetails.category}</StyledInfo>
+          <StyledInfo>Lokalizacja: {offerDetails.location}</StyledInfo>
           <UserContainer>
             {offerDetails.userImage && (
               <UserImage src={offerDetails.userImage} alt={offerDetails.userName} />

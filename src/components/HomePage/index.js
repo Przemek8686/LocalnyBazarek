@@ -73,8 +73,8 @@ const HomePage = () => {
                   <ProductImage src={product.imageUrl} alt={product.title} />
                 </ProductImageContainer>
                 <ProductTitle>{product.title}</ProductTitle>
-                <ProductPrice>{product.price}</ProductPrice>
-                <ProductUnit>{product.unit}</ProductUnit>
+                <ProductPrice>Cena w zł:{product.price}</ProductPrice>
+                <ProductUnit>Waga:{product.unit}</ProductUnit>
                 <UserProfile>
                   <UserImage src={product.userImage} alt={product.userName} />
                   <UserName>{product.userName}</UserName>
