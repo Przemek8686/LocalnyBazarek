@@ -17,6 +17,7 @@ import RegisterPage from './RegisterPage';
 import AddOfferPage from './AddProductForm';
 import HomePage from './HomePage';
 import OfferDetailsPage from './OfferDetailsPage'; // New import
+import Contact from "./Contact"; 
 
 
 // Inicjalizacja Firebase
@@ -53,6 +54,7 @@ const App = () => (
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/add-offer" element={<AddOfferPage />} />
         <Route path="/offer/:id" element={<OfferDetailsPage />} /> 
+        <Route path="/contact" element={<Contact />} /> 
         <Route path="/" element={<HomePage />} />
       </Routes>
     

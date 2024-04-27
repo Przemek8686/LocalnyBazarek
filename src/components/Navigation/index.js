@@ -31,7 +31,7 @@ const Navigation = () => {
         <span></span>
       </MenuIcon>
       <NavLinksContainer isMenuOpen={isMenuOpen}>
-        <StyledLink to="/" activeClassName="active" exact>
+        <StyledLink to="/" activeClassName="active" exact="true">
           Oferty
         </StyledLink>
         <StyledLink to="/add-offer" activeClassName="active">
@@ -43,7 +43,11 @@ const Navigation = () => {
         <StyledLink to="/register" activeClassName="active">
           Rejestracja
         </StyledLink>
+         <StyledLink to="/contact" activeClassName="active">
+         Kontakt
+        </StyledLink>
       </NavLinksContainer>
+     
       <Spacer />
     </NavigationBar>
   );
