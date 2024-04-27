@@ -2,8 +2,8 @@ import styled from "styled-components";
 
 export const ProductGrid = styled.div`
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  grid-gap: 45px;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 40px;
   margin: 20px 15px;
 
   @media screen and (max-width: 1200px) {
