@@ -38,8 +38,6 @@ const RegisterPage = () => {
         photoURL: profilePicUrl,
       });
 
-     
-
       setLoading(false);
       setRegistered(true);
 
@@ -60,7 +58,6 @@ const RegisterPage = () => {
 
   return (
     <Container>
-      
       <RegisterForm onSubmit={handleSubmit}>
         {loading ? (
           <Loading />
@@ -68,7 +65,7 @@ const RegisterPage = () => {
           <WelcomeMessage>Witamy w "Lokalny Bazarek"</WelcomeMessage>
         ) : (
           <>
-          <RegisterTitle>Rejestracja Profilu</RegisterTitle>
+            <RegisterTitle>Rejestracja Profilu</RegisterTitle>
             <LogoContainer>
               <Logo src={logo} alt="Logo" />
               <Title>Lokalny Bazarek</Title>
