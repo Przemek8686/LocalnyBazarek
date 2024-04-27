@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { getAuth, signInWithEmailAndPassword, sendPasswordResetEmail } from 'firebase/auth';
-import { Container, Login, Logo, LoginTitle, LoginForm, WelcomeMessage, Input, Button, Loading, LogoContainer, Title } from './styled';
+import { Container, Login, Logo,Button2, LoginTitle, LoginForm, WelcomeMessage, Input, Button, Loading, LogoContainer, Title } from './styled';
 import logo from "../../Images/logo2.png";
 
 const LoginPage = () => {
@@ -68,7 +68,7 @@ const LoginPage = () => {
           {user ? (
             <WelcomeMessage>
               Zalogowany jako: {user.email}
-              <Button onClick={handleLogout}>Wyloguj się</Button>
+              <Button2 onClick={handleLogout}>Wyloguj się</Button2>
             </WelcomeMessage>
           ) : (
             <>

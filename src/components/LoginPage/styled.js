@@ -62,6 +62,8 @@ export const LoginForm = styled.form`
 `;
 
 export const WelcomeMessage = styled.h2`
+  display:flex;
+  flex-direction:column;
   color: #1f5156;
   text-align: center;
   margin: 20px 0;
@@ -101,6 +103,30 @@ export const Button = styled.button`
 margin-left:5px;
   }
 `;
+export const Button2 = styled.button`
+  padding: 10px 20px ;
+  background-color: #1f5156;
+  color: #f5b921;
+  border: none;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 10px 0;
+  transition-duration: 0.4s;
+  border-radius: 12px;
+
+  &:hover {
+    background-color: #378d95;
+    color: white;
+    border: 2px solid #4caf50;
+  }
+
+  @media (max-width: 768px) {
+margin-left:5px;
+  }
+`;
 
 export const Loading = styled.div`
   margin-top: 20px;
@@ -109,7 +135,7 @@ export const Loading = styled.div`
   border-radius: 50%;
   width: 30px;
   height: 30px;
-  animation: ${rotate} 2s linear infinite;
+  animation: ${rotate} 5s linear infinite;
 `;
 export const LoginTitle = styled.h1`
   font-size: 2em;
