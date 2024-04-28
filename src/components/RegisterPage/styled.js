@@ -30,7 +30,7 @@ export const RegisterForm = styled.form`
   border-radius: 10px;
   padding: 20px;
   box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.3);
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: white;
   font-weight: bold;
 
   @media (max-width: 768px) {
