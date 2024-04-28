@@ -18,6 +18,7 @@ import AddOfferPage from './AddProductForm';
 import HomePage from './HomePage';
 import OfferDetailsPage from './OfferDetailsPage'; // New import
 import Contact from "./Contact"; 
+import Info from "./Info";
 
 
 // Inicjalizacja Firebase
@@ -55,7 +56,8 @@ const App = () => (
         <Route path="/add-offer" element={<AddOfferPage />} />
         <Route path="/offer/:id" element={<OfferDetailsPage />} /> 
         <Route path="/contact" element={<Contact />} /> 
-        <Route path="/" element={<HomePage />} />
+        <Route path="/LocalnyBazarek" element={<HomePage />} />
+        <Route path="/info" element={<Info />} />
       </Routes>
     
   </Router>

@@ -9,7 +9,7 @@ export const ContactBox = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: #f9f9f9;
+  background-color: rgba(255, 255, 255, 0.8);
   border: 2px solid #1f5156;
   border-radius: 10px;
   padding: 20px;

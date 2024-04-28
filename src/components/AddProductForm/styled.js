@@ -18,7 +18,7 @@ export const Form = styled.form`
   border-radius: 8px; /* Zmniejszenie promienia zaokrąglenia */
   padding: 16px; /* Zmniejszenie wewnętrznego marginesu */
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3); /* Zmniejszenie rozmycia cienia */
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.8);
   font-weight: bold;
   margin-top: 150px; /* Zmniejszenie odstępu od góry */
 `;
