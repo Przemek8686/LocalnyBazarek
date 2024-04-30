@@ -49,6 +49,9 @@ const Navigation = () => {
          <StyledLink to="/contact" activeClassName="active">
          Kontakt
         </StyledLink>
+        <StyledLink to="/reklama" activeClassName="active">
+         Reklama
+        </StyledLink>
       </NavLinksContainer>
      
       <Spacer />

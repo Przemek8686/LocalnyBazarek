@@ -19,6 +19,7 @@ import HomePage from './HomePage';
 import OfferDetailsPage from './OfferDetailsPage'; // New import
 import Contact from "./Contact"; 
 import Info from "./Info";
+import Advertisement from "./Advertisement";
 
 
 // Inicjalizacja Firebase
@@ -58,6 +59,7 @@ const App = () => (
         <Route path="/contact" element={<Contact />} /> 
         <Route path="/LocalnyBazarek" element={<HomePage />} />
         <Route path="/info" element={<Info />} />
+        <Route path="/reklama" element={<Advertisement />} />
       </Routes>
     
   </Router>

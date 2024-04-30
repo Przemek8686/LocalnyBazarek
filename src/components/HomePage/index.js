@@ -4,18 +4,22 @@ import { collection, query, orderBy, onSnapshot, deleteDoc, doc } from "firebase
 import { SearchInput, ProductGrid, ProductTile, ProductImageContainer, ProductImage, ProductTitle, ProductPrice, ProductUnit, UserProfile, UserImage, UserName, ContactInfo, AdditionalInfo, LocationInfo, Button } from "./styled";
 import { Link } from "react-router-dom";
 import { getAuth } from "firebase/auth";
+import ConfirmationModal from "../ConfirmationModal";
 
 const HomePage = () => {
   const [products, setProducts] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
   const [filteredProducts, setFilteredProducts] = useState([]);
+  const [showModal, setShowModal] = useState(false);
+  const [deleteProductId, setDeleteProductId] = useState(null);
   const auth = getAuth();
 
   const filterProducts = useCallback((productsData) => {
     const filtered = productsData.filter(product =>
       (product.title && product.title.toLowerCase().includes(searchTerm.toLowerCase())) ||
       (product.category && product.category.toLowerCase().includes(searchTerm.toLowerCase())) ||
-      (product.userName && product.userName.toLowerCase().includes(searchTerm.toLowerCase()))
+      (product.userName && product.userName.toLowerCase().includes(searchTerm.toLowerCase())) ||
+      (product.location && product.location.toLowerCase().includes(searchTerm.toLowerCase()))
     );
     setFilteredProducts(filtered);
   }, [searchTerm]);
@@ -42,10 +46,22 @@ const HomePage = () => {
     filterProducts(products);
   };
 
-  const handleDelete = async (productId) => {
+  const handleDeleteConfirmation = (productId) => {
+    setShowModal(true);
+    setDeleteProductId(productId);
+  };
+
+  const handleCancelDelete = () => {
+    setShowModal(false);
+    setDeleteProductId(null);
+  };
+
+  const handleConfirmDelete = async () => {
     try {
-      await deleteDoc(doc(db, "products", productId));
+      await deleteDoc(doc(db, "products", deleteProductId));
       console.log("Document successfully deleted!");
+      setShowModal(false);
+      setDeleteProductId(null);
     } catch (error) {
       console.error("Error removing document: ", error);
     }
@@ -56,7 +72,7 @@ const HomePage = () => {
       <form onSubmit={handleSearch}>
         <SearchInput
           type="text"
-          placeholder="Szukaj po nazwie, kategorii, użytkowniku..."
+          placeholder="Szukaj po nazwie, kategorii, użytkowniku, lokalizacji..."
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
         />
@@ -73,7 +89,7 @@ const HomePage = () => {
                   <ProductImage src={product.imageUrl} alt={product.title} />
                 </ProductImageContainer>
                 <ProductTitle>{product.title}</ProductTitle>
-                <ProductPrice>Cena w zł:{product.price}</ProductPrice>
+                <ProductPrice>Cena: {product.price} zł</ProductPrice>
                 <ProductUnit>Waga:{product.unit}</ProductUnit>
                 <UserProfile>
                   <UserImage src={product.userImage} alt={product.userName} />
@@ -86,11 +102,14 @@ const HomePage = () => {
               </ProductTile>
             </Link>
             {auth.currentUser && auth.currentUser.displayName === product.userName && (
-              <Button onClick={() => handleDelete(product.id)}>Usuń Oferte</Button>
+              <Button onClick={() => handleDeleteConfirmation(product.id)}>Usuń Ofertę</Button>
             )}
           </div>
         ))}
       </ProductGrid>
+      {showModal && (
+        <ConfirmationModal onCancel={handleCancelDelete} onConfirm={handleConfirmDelete} />
+      )}
     </>
   );
 };

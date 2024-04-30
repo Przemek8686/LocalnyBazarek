@@ -8,7 +8,7 @@ export const NavigationBar = styled.nav`
   padding: 0.3em;
   background: linear-gradient(#1f5156, #163b3f);
   border: 3px solid #1f5156; 
-  border-radius: 0px 0px 15px 15px; 
+ 
   
   /* Media query dla mniejszych rozdzielczości */
   @media (max-width: 768px) {

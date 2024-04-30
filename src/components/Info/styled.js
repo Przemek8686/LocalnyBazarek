@@ -15,8 +15,8 @@ export const InfoContainer = styled.div`
 `;
 
 export const Logo = styled.img`
-  max-width: 200px;
-  margin-bottom: 20px;
+  max-width: 140px;
+  
 `;
 
 export const InfoContent = styled.div`
@@ -41,4 +41,23 @@ export const InfoContent = styled.div`
       font-size: 14px;
     }
   }
+`;
+export const LogoContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 5px; /* Zmieniony margines */
+`;
+
+export const Title = styled.h1`
+  font-size: 1.5em;
+  text-align: center;
+  color: #1f5156;
+  margin-top: 5px; /* Zmieniony margines */
+`;
+export const ContactInformation = styled.h2`
+  /* Styl dla informacji kontaktowych */
+  font-size: 20px;
+  color: #333; /* Przykładowy kolor */
+  text-align: center; /* Wyśrodkowanie tekstu */
 `;

@@ -1,11 +1,14 @@
 import React from "react";
-import { InfoContainer, Logo, InfoContent } from "./styled";
+import { InfoContainer, Logo, InfoContent,LogoContainer,Title } from "./styled";
 
 import logo from "../../Images/logo2.png"; // Import logo image
 
 const Info = () => (
   <InfoContainer>
-    <Logo src={logo} alt="Logo" />
+    <LogoContainer>
+          <Logo src={logo} alt="Logo" />
+          <Title>Lokalny Bazarek</Title>
+        </LogoContainer>
     <InfoContent>
       <h2>Witaj w Lokalnym Bazarku</h2>
       <p>

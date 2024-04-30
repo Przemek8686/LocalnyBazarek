@@ -30,12 +30,13 @@ export const ContactBox = styled.div`
 
 export const Logo = styled.img`
   width: 140px;
+  margin-top: 10px;
   height: auto;
-  margin-right: 20px;
+  
 
   @media screen and (max-width: 480px) {
     width: 100px;
-    margin-left:9%
+    margin-left: 9%;
   }
 `;
 
@@ -48,7 +49,7 @@ export const ContactInfo = styled.div`
 
     @media screen and (max-width: 480px) {
       font-size: 1.2em;
-      margin-left:33px;
+      margin-left: 13px;
     }
   }
 `;
@@ -62,7 +63,45 @@ export const ContactDetails = styled.div`
 
     @media screen and (max-width: 480px) {
       font-size: 1em;
-      margin-left:33px;
+      margin-left: 13px;
     }
   }
+`;
+
+export const SocialIcons = styled.div`
+  margin-top: 20px;
+  display: flex;
+  justify-content: center; /* Wyśrodkowanie ikon wzdłuż osi X */
+  align-items: center; /* Wyśrodkowanie ikon wzdłuż osi Y */
+
+  a {
+    font-size: 2em;
+    margin-right: 10px;
+    color: #1f5156;
+    margin: 10px;
+
+    &:hover {
+      color: #666;
+    }
+  }
+`;
+
+export const LogoContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 5px; /* Zmieniony margines */
+`;
+
+export const Title = styled.h1`
+  font-size: 1.5em;
+  text-align: center;
+  color: #1f5156;
+  margin-top: 5px; /* Zmieniony margines */
+`;
+export const ContactInformation = styled.h2`
+  /* Styl dla informacji kontaktowych */
+  font-size: 20px;
+  color: #333; /* Przykładowy kolor */
+  text-align: center; /* Wyśrodkowanie tekstu */
 `;
