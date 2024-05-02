@@ -42,7 +42,7 @@ const OfferDetailsPage = () => {
             />
           )}
           <OfferDescription>{offerDetails.description}</OfferDescription>
-          <StyledInfo>Cena w zł: {offerDetails.price}</StyledInfo>
+          <StyledInfo>Cena: {offerDetails.price} zł</StyledInfo>
           <StyledInfo>Waga: {offerDetails.unit}</StyledInfo>
           <StyledInfo>Kontakt: {offerDetails.contact}</StyledInfo>
           <StyledInfo>Kategoria: {offerDetails.category}</StyledInfo>

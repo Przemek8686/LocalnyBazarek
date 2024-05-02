@@ -79,9 +79,11 @@ export const SocialIcons = styled.div`
     margin-right: 10px;
     color: #1f5156;
     margin: 10px;
+    transition: transform 0.2s; /* Dodajemy efekt przejścia dla transformacji */
 
     &:hover {
       color: #666;
+      transform: scale(1.1); /* Delikatne powiększenie po najechaniu myszką */
     }
   }
 `;

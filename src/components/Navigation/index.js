@@ -31,14 +31,14 @@ const Navigation = () => {
         <span></span>
       </MenuIcon>
       <NavLinksContainer isMenuOpen={isMenuOpen}>
+        <StyledLink to="/info" activeClassName="active">
+          Info
+        </StyledLink>
         <StyledLink to="/LocalnyBazarek" activeClassName="active" exact="true">
           Oferty
         </StyledLink>
         <StyledLink to="/add-offer" activeClassName="active">
           Dodaj Ofertę
-        </StyledLink>
-        <StyledLink to="/info" activeClassName="active">
-       Info
         </StyledLink>
         <StyledLink to="/login" activeClassName="active">
           Logowanie
@@ -46,14 +46,15 @@ const Navigation = () => {
         <StyledLink to="/register" activeClassName="active">
           Rejestracja
         </StyledLink>
-         <StyledLink to="/contact" activeClassName="active">
-         Kontakt
+        <StyledLink to="/contact" activeClassName="active">
+          Kontakt
         </StyledLink>
+       
         <StyledLink to="/reklama" activeClassName="active">
-         Reklama
+          Reklama
         </StyledLink>
       </NavLinksContainer>
-     
+
       <Spacer />
     </NavigationBar>
   );

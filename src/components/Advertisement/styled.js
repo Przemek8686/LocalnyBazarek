@@ -9,7 +9,7 @@ export const AdvertisementContainer = styled.div`
 `;
 
 export const AdTile = styled.a`
-  width: 200px;
+  width: 400px;
   height: 200px;
   margin: 20px;
   display: flex;

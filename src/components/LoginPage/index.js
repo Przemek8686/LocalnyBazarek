@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { getAuth, signInWithEmailAndPassword, sendPasswordResetEmail } from 'firebase/auth';
-import { Container, Login, Logo,Button2, LoginTitle, LoginForm, WelcomeMessage, Input, Button, Loading, LogoContainer, Title } from './styled';
+import { Container, Login, Logo, Button2, LoginTitle, LoginForm, WelcomeMessage, Input, Button, Loading, LogoContainer, Title } from './styled';
 import logo from "../../Images/logo2.png";
 
 const LoginPage = () => {
@@ -11,9 +11,13 @@ const LoginPage = () => {
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
   const [resetPasswordSent, setResetPasswordSent] = useState(false);
+  const [rememberMe, setRememberMe] = useState(false); // Nowy state dla checkboxa
   const auth = getAuth();
 
   useEffect(() => {
+    const storedEmail = localStorage.getItem('rememberedEmail');
+    if (storedEmail) setEmail(storedEmail); // Ustawienie zapamiętanego emaila, jeśli istnieje
+
     const unsubscribe = auth.onAuthStateChanged((user) => {
       setUser(user);
     });
@@ -25,6 +29,7 @@ const LoginPage = () => {
     setLoading(true);
     try {
       await signInWithEmailAndPassword(auth, email, password);
+      if (rememberMe) localStorage.setItem('rememberedEmail', email); // Zapisanie emaila, jeśli zapamiętaj mnie jest zaznaczone
       // Reset email and password fields after successful login
       setEmail('');
       setPassword('');
@@ -86,6 +91,14 @@ const LoginPage = () => {
                 onChange={(e) => setPassword(e.target.value)}
                 autoComplete="off" // Disable auto-fill
               />
+              <label>
+                <input
+                  type="checkbox"
+                  checked={rememberMe}
+                  onChange={(e) => setRememberMe(e.target.checked)}
+                />
+                Zapamiętaj mnie
+              </label>
               {loading ? (
                 <Loading />
               ) : (
