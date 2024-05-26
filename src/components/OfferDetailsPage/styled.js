@@ -19,7 +19,7 @@ export const OfferDetailsContainer = styled.div`
     padding: 10px;
     border-width: 2px;
     border-radius: 8px;
-    max-width: 335px;
+    max-width: 314px;
   }
 
   @media screen and (max-width: 400px) {
