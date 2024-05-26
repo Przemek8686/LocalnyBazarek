@@ -53,6 +53,9 @@ const Navigation = () => {
         <StyledLink to="/reklama" activeClassName="active">
           Reklama
         </StyledLink>
+        <StyledLink to="/blog" activeClassName="active">
+          Blog
+        </StyledLink>
       </NavLinksContainer>
 
       <Spacer />

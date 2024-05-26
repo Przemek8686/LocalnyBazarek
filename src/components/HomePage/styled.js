@@ -89,7 +89,7 @@ export const UserProfile = styled.div`
 
 export const UserImage = styled.img`
 width: 30px;
-height: 30px;
+height: 27px;
   border-radius: 50%;
   margin-bottom: 5px;
 

@@ -20,7 +20,7 @@ import OfferDetailsPage from './OfferDetailsPage'; // New import
 import Contact from "./Contact"; 
 import Info from "./Info";
 import Advertisement from "./Advertisement";
-//import Blog from "./Blog";
+import Blog from "./Blog";
 
 
 
@@ -62,7 +62,7 @@ const App = () => (
         <Route path="/LocalnyBazarek" element={<HomePage />} />
         <Route path="/info" element={<Info />} />
         <Route path="/reklama" element={<Advertisement />} />
-        
+        <Route path="/blog" element={<Blog/>} />
       </Routes>
     
   </Router>
