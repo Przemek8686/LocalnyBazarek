@@ -16,7 +16,7 @@ export const OfferDetailsContainer = styled.div`
 
   @media screen and (max-width: 768px) {
     /* Style changes for smaller screens */
-    padding: 15px;
+    padding: 10px;
     border-width: 2px;
     border-radius: 8px;
     max-width: 335px;
@@ -42,12 +42,12 @@ export const OfferImage = styled.img`
   @media screen and (max-width: 768px) {
     /* Style changes for smaller screens */
     max-width: 300px;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
     border-width: 2px;
     border-radius: 8px;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.4);
   }
-
+  
   @media screen and (max-width: 400px) {
     /* Further style changes for very small screens */
     max-width: 250px;
@@ -75,12 +75,18 @@ export const OfferDescription = styled.p`
   font-size: 1.2em;
   margin-bottom: 10px;
   font-weight: bold;
-
+  
   @media screen and (max-width: 400px) {
     /* Style changes for very small screens */
     font-size: 1.1em;
     margin-bottom: 8px;
   }
+`;
+
+export const StyledInfo = styled.p`
+  font-size: 1.2em;
+  font-weight: bold;
+  margin: 5px 0;
 `;
 
 export const UserContainer = styled.div`
@@ -105,15 +111,37 @@ export const UserImage = styled.img`
     width: 40px;
     height: 40px;
   }
+
 `;
 
 export const UserName = styled.span`
   font-size: 1.2em;
   font-weight: bold;
 
+  
   @media screen and (max-width: 400px) {
     /* Style changes for very small screens */
     font-size: 1.1em;
+  }
+`;
+
+export const Modal = styled.div`
+  display: ${(props) => (props.modalOpen ? "block" : "none")};
+  position: fixed;
+  z-index: 999;
+  padding-top: 50px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.9);
+
+  @media screen and (max-width: 400px) {
+    /* Style changes for very small screens */
+    padding: 6px;
+    width: 90%;
   }
 `;
 
@@ -125,12 +153,6 @@ export const ModalContent = styled.div`
   border: 1px solid #888;
   background-color: #fefefe;
   padding: 9px;
-
-  @media screen and (max-width: 400px) {
-    /* Style changes for very small screens */
-    padding: 6px;
-    width: 90%;
-  }
 `;
 
 export const CloseButton = styled.span`
