@@ -16,6 +16,10 @@ export const NavigationBar = styled.nav`
     align-items: center;
     padding: 1em 11em;
   }
+  @media (max-width: 400px) {
+    padding: 0.2em;
+    width: 95%; /* Jeszcze bardziej zmniejszamy szerokość kontenera */
+  }
 `;
 
 export const Logo = styled.img`
