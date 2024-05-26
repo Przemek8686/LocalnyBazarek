@@ -5,48 +5,7 @@ import {AddArticleForm,Article,Image} from "./styled"
 
 
 const Blog = () => {
-    const [articles, setArticles] = useState([]);
-    const [title, setTitle] = useState('');
-    const [content, setContent] = useState('');
-    const [image, setImage] = useState(null);
-  
-    const handleAddArticle = async (e) => {
-      e.preventDefault();
-  
-      if (!image) {
-        console.log('No image selected');
-        return;
-      }
-  
-      // Przesyłanie obrazka do Firebase Storage
-      const imageRef = storage.ref().child(image.name); // Poprawka tutaj
-      await imageRef.put(image);
-      const imageUrl = await imageRef.getDownloadURL();
-  
-      // Dodawanie artykułu do Firestore
-      await db.collection('articles').add({
-        title: title,
-        content: content,
-        imageUrl: imageUrl,
-      });
-  
-      // Pobieranie aktualnej listy artykułów
-      const articlesSnapshot = await db.collection('articles').get();
-      const updatedArticles = articlesSnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
-      setArticles(updatedArticles);
-  
-      // Czyszczenie pól formularza
-      setTitle('');
-      setContent('');
-      setImage(null);
-    };
-  
-    const handleImageChange = (e) => {
-      const selectedImage = e.target.files[0];
-      setImage(selectedImage);
-    };
-  
-    return (
+  return (
       <div>
         <AddArticleForm onSubmit={handleAddArticle}>
           <label>
