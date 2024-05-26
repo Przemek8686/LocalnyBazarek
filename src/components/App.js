@@ -40,13 +40,34 @@ const app = initializeApp(firebaseConfig);
 getAnalytics(app);
 
 const GlobalStyles = createGlobalStyle`
-  body {
-    background: url(${backgroundImage}) no-repeat center center fixed; 
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
+body {
+  background: url(${backgroundImage}) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  max-width: 100%; /* Ensuring the background doesn't exceed the viewport width */
+  max-height: 100vh;
+  @media (max-width: 1200px) {
+    background-size: contain; /* You can change this if you want different behavior */
   }
+
+ 
+  @media (max-width: 1200px) {
+    background-size: cover; /* You can change this if you want different behavior */
+  }
+
+  @media (max-width: 768px) {
+    background-size: cover; /* Again, adjust as needed */
+  }
+
+  @media (max-width: 400px) {
+    background-size: cover; /* Adjust as needed for smaller screens */
+  }@media (max-width: 412px) {
+    background-size: cover; /* Adjust as needed for smaller screens */
+  }
+
+}
 `;
 
 const App = () => (
