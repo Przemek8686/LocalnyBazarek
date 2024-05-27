@@ -52,6 +52,11 @@ export const Title = styled.h1`
   font-size: 1.5em;
   text-align: center;
   color: #1f5156;
+  
+  @media (max-width: 480px) {
+    font-size:1.2em;
+  }
+
 `;
 
 export const LoginForm = styled.form`
@@ -146,4 +151,8 @@ export const LoginTitle = styled.h1`
   border-radius: 10px;
   padding: 10px;
   box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.3);
+
+  @media (max-width: 480px) {
+    font-size:1.6em;
+  }
 `;

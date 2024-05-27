@@ -17,6 +17,10 @@ export const RegisterTitle = styled.h1`
   border-radius: 10px;
   padding: 10px;
   box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.3);
+
+  @media (max-width: 480px) {
+   font-size:1.7em;
+  }
 `;
 
 export const RegisterForm = styled.form`
@@ -34,7 +38,21 @@ export const RegisterForm = styled.form`
   font-weight: bold;
 
   @media (max-width: 768px) {
-    margin: 3%;
+    width: 90%;
+    max-width: 400px;
+    margin: 3% auto;
+  }
+
+  @media (max-width: 480px) {
+    width: 95%;
+    max-width: 350px;
+    margin: 5% auto;
+  }
+
+  @media (max-width: 400px) {
+    width: 83%;
+    max-width: 300px;
+    margin: 5% auto;
   }
 `;
 
@@ -110,4 +128,16 @@ export const Title = styled.h1`
   text-align: center;
   color: #1f5156;
   margin-top: 1px;
+
+  @media (max-width: 768px) {
+    font-size: 1.2em;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 1em;
+  }
+
+  @media (max-width: 400px) {
+    font-size: 0.9em;
+  }
 `;

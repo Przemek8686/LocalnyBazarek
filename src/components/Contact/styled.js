@@ -26,17 +26,27 @@ export const ContactBox = styled.div`
     max-width: 300px;
     margin: 10% 10%;
   }
+
+  @media screen and (max-width: 400px) {
+    max-width: 250px;
+    margin: 10% 5%;
+    padding: 15px;
+  }
 `;
 
 export const Logo = styled.img`
   width: 140px;
   margin-top: 10px;
   height: auto;
-  
 
   @media screen and (max-width: 480px) {
     width: 100px;
     margin-left: 9%;
+  }
+
+  @media screen and (max-width: 400px) {
+    width: 80px;
+    margin-left: 5%;
   }
 `;
 
@@ -51,19 +61,29 @@ export const ContactInfo = styled.div`
       font-size: 1.2em;
       margin-left: 13px;
     }
+
+    @media screen and (max-width: 400px) {
+      font-size: 1em;
+      margin-left: 10px;
+    }
   }
 `;
 
 export const ContactDetails = styled.div`
   p {
     margin-bottom: 5px;
-    font-size: 1.2em;
+    font-size: 1.1em;
     color: #666;
     font-weight: bold;
 
     @media screen and (max-width: 480px) {
       font-size: 1em;
       margin-left: 13px;
+    }
+
+    @media screen and (max-width: 400px) {
+      font-size: 0.7em;
+      margin-left: 10px;
     }
   }
 `;
@@ -85,6 +105,11 @@ export const SocialIcons = styled.div`
       color: #666;
       transform: scale(1.1); /* Delikatne powiększenie po najechaniu myszką */
     }
+
+    @media screen and (max-width: 400px) {
+      font-size: 1.5em;
+      margin: 5px;
+    }
   }
 `;
 
@@ -93,6 +118,10 @@ export const LogoContainer = styled.div`
   flex-direction: column;
   align-items: center;
   margin-bottom: 5px; /* Zmieniony margines */
+
+  @media screen and (max-width: 400px) {
+    margin-bottom: 3px;
+  }
 `;
 
 export const Title = styled.h1`
@@ -100,10 +129,19 @@ export const Title = styled.h1`
   text-align: center;
   color: #1f5156;
   margin-top: 5px; /* Zmieniony margines */
+
+  @media screen and (max-width: 400px) {
+    font-size: 1.2em;
+    margin-top: 3px;
+  }
 `;
+
 export const ContactInformation = styled.h2`
-  /* Styl dla informacji kontaktowych */
   font-size: 20px;
   color: #333; /* Przykładowy kolor */
   text-align: center; /* Wyśrodkowanie tekstu */
+
+  @media screen and (max-width: 400px) {
+    font-size: 18px;
+  }
 `;
