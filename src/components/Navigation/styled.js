@@ -1,4 +1,5 @@
 import { NavLink } from 'react-router-dom'; 
+import { Link } from "react-router-dom";
 import styled from 'styled-components';
 
 export const NavigationBar = styled.nav`
@@ -22,6 +23,12 @@ export const NavigationBar = styled.nav`
   }
 `;
 
+export const StyledLogoLink = styled(Link)`
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color:#f5b921;
+`;
 export const Logo = styled.img`
   width: 70px; 
   height: 70px; 

@@ -15,7 +15,7 @@ import backgroundImage from '../Images/obraz.jpg'; // Import your image
 import LoginPage from './LoginPage';
 import RegisterPage from './RegisterPage';
 import AddOfferPage from './AddProductForm';
-import HomePage from './HomePage';
+import Offer from './Offer';
 import OfferDetailsPage from './OfferDetailsPage'; // New import
 import Contact from "./Contact"; 
 import Info from "./Info";
@@ -80,8 +80,8 @@ const App = () => (
         <Route path="/add-offer" element={<AddOfferPage />} />
         <Route path="/offer/:id" element={<OfferDetailsPage />} /> 
         <Route path="/contact" element={<Contact />} /> 
-        <Route path="/LocalnyBazarek" element={<HomePage />} />
-        <Route path="/info" element={<Info />} />
+        <Route path="/LocalnyBazarek" element={<Offer />} />
+        <Route path="/" element={<Info />} />
         <Route path="/reklama" element={<Advertisement />} />
         <Route path="/blog" element={<Blog/>} />
       </Routes>

@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import { getAuth } from "firebase/auth";
 import ConfirmationModal from "../ConfirmationModal";
 
-const HomePage = () => {
+const Offer = () => {
   const [products, setProducts] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
   const [filteredProducts, setFilteredProducts] = useState([]);
@@ -114,4 +114,4 @@ const HomePage = () => {
   );
 };
 
-export default HomePage;
+export default Offer;

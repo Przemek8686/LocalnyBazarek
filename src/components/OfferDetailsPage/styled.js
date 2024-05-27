@@ -27,6 +27,8 @@ export const OfferDetailsContainer = styled.div`
     padding: 10px;
     border-width: 1px;
     border-radius: 6px;
+    max-width: 314px;
+    
   }
 `;
 
