@@ -19,6 +19,10 @@ const Navigation = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  const closeMenu = () => {
+    setIsMenuOpen(false);
+  };
+
   return (
     <NavigationBar>
       <TitleContainer>  
@@ -38,26 +42,26 @@ const Navigation = () => {
       <NavLinksContainer isMenuOpen={isMenuOpen}>
         <StyledLogoLink to="/" activeClassName="active">
 </StyledLogoLink>
-        <StyledLink to="/LocalnyBazarek" activeClassName="active" exact="true">
+        <StyledLink to="/LocalnyBazarek" activeClassName="active" exact="true" onClick={closeMenu}>
           Oferty
         </StyledLink>
-        <StyledLink to="/add-offer" activeClassName="active">
+        <StyledLink to="/add-offer" activeClassName="active" onClick={closeMenu} >
           Dodaj Ofertę
         </StyledLink>
-        <StyledLink to="/login" activeClassName="active">
+        <StyledLink to="/login" activeClassName="active" onClick={closeMenu}>
           Logowanie
         </StyledLink>
-        <StyledLink to="/register" activeClassName="active">
+        <StyledLink to="/register" activeClassName="active" onClick={closeMenu}>
           Rejestracja
         </StyledLink>
-        <StyledLink to="/contact" activeClassName="active">
+        <StyledLink to="/contact" activeClassName="active" onClick={closeMenu}>
           Kontakt
         </StyledLink>
 
-        <StyledLink to="/reklama" activeClassName="active">
+        <StyledLink to="/reklama" activeClassName="active" onClick={closeMenu} >
           Reklama
         </StyledLink>
-        <StyledLink to="/blog" activeClassName="active">
+        <StyledLink to="/blog" activeClassName="active" onClick={closeMenu}>
           Blog
         </StyledLink>
       </NavLinksContainer>

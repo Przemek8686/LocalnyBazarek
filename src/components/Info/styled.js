@@ -61,3 +61,17 @@ export const ContactInformation = styled.h2`
   color: #333; /* Przykładowy kolor */
   text-align: center; /* Wyśrodkowanie tekstu */
 `;
+
+export const Paragraph = styled.p`
+  font-size: 16px;
+  line-height: 1.5;
+  margin: 10px 0;
+
+  @media (max-width: 768px) {
+    font-size: 14px;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 12px;
+  }
+`;
