@@ -79,7 +79,7 @@ export const Title = styled.div`
   font-size: 1.5em;
   font-weight: bold;
   margin-left: 10px;
-  white-space: nowrap;
+   white-space: nowrap;
 `;
 
 export const Title1 = styled.div`
@@ -88,7 +88,7 @@ export const Title1 = styled.div`
   margin-left: 40px;
   white-space: nowrap;
   @media (max-width: 450px) {
-    margin-left: 10px;
+    margin-left: 49px;
   }
 `;
 

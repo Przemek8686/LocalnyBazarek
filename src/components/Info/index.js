@@ -42,7 +42,7 @@ const Info = () => {
 
         <Paragraph>
 
-          Witaj na Lokalnym Bazarku w powiecie słupeckim! To miejsce, gdzie łączymy się z lokalnymi rolnikami, producentami i przetwórcami, wspierając ich pasję i wysiłek. Jest to miejsce, gdzie można przesyłać oferty świeżych warzyw, owoców, pieczywa, ręcznie robionych serów, ciast, soków, przetworów, tradycyjnych wędlin, mięs i kiełbas, unikalnych rękodzieł oraz roślin ozdobnych oraz sadzonki warzyw i owoców.
+          Witaj na Lokalnym Bazarku w powiecie słupeckim! To miejsce, gdzie łączymy się z lokalnymi rolnikami, producentami i przetwórcami, wspierając ich pasję i wysiłek. Jest to miejsce, gdzie możecie przesyłać oraz szukać oferty świeżych warzyw, owoców, pieczywa, ręcznie robionych serów, ciast, soków, przetworów, tradycyjnych wędlin, mięs i kiełbas, unikalnych rękodzieł oraz roślin ozdobnych oraz sadzonki warzyw i owoców.
 
           Kupowanie od lokalnych producentów przynosi wiele korzyści. Przede wszystkim, wspieramy lokalną gospodarkę i pomagamy utrzymać tradycyjne metody produkcji. Produkty są świeższe i wyższej jakości, ponieważ nie muszą pokonywać długich dystansów. Ponadto, wspierając lokalnych rolników i rzemieślników, przyczyniamy się do zachowania bioróżnorodności i ochrony środowiska. Tworzymy również silne więzi lokalne, budując poczucie wspólnoty.
 
