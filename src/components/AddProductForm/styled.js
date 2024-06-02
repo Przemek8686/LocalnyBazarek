@@ -26,8 +26,8 @@ export const CheckIcon = styled.span`
   margin-left: 5px; 
 `;
 export const Input = styled.input`
-  margin-bottom: 8px; /* Zmniejszenie odstępu między elementami */
-  padding: 8px; /* Zmniejszenie wewnętrznego marginesu */
+  margin-bottom: 6px; /* Zmniejszenie odstępu między elementami */
+  padding: 10px; /* Zmniejszenie wewnętrznego marginesu */
   width: 100%;
   border: 1px solid #1f5156; /* Zmniejszenie grubości obramowania */
   border-radius: 4px; /* Zmniejszenie promienia zaokrąglenia */
