@@ -19,12 +19,12 @@ export const ContactBox = styled.div`
 
   @media screen and (max-width: 768px) {
     max-width: 400px;
-    margin: 10% 20%;
+  
   }
 
   @media screen and (max-width: 480px) {
     max-width: 300px;
-    margin: 10% 10%;
+  
   }
 
   @media screen and (max-width: 400px) {
