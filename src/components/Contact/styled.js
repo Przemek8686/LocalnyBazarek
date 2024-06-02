@@ -29,7 +29,7 @@ export const ContactBox = styled.div`
 
   @media screen and (max-width: 400px) {
     max-width: 250px;
-    margin: 10% 5%;
+    
     padding: 15px;
   }
 `;
