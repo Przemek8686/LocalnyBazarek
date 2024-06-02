@@ -21,7 +21,7 @@ const Contact = () => {
           </ContactDetails>
           <SocialIcons>
             {/* Ikony będące linkami do profili na różnych platformach */}
-            <a href="https://www.facebook.com/twojprofil" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.facebook.com/profile.php?id=61560650544477" target="_blank" rel="noopener noreferrer">
               <FaFacebook />
             </a>
             <a href="https://www.tiktok.com/@twojprofil" target="_blank" rel="noopener noreferrer">
