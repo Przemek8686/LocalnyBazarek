@@ -8,7 +8,7 @@ const Info = () => {
   useEffect(() => {
     const loadingTimeout = setTimeout(() => {
       setLoading(false);
-    }, 3000); // 3 seconds
+    }, 2000); // 3 seconds
 
     return () => clearTimeout(loadingTimeout); // Clean up the timeout on component unmount
   }, []);
