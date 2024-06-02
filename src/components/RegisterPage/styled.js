@@ -22,6 +22,13 @@ export const RegisterTitle = styled.h1`
    font-size:1.7em;
   }
 `;
+export const Subtitle = styled.h2`
+  font-size: 1.0em;
+  font-weight: normal;
+  margin-top: -10px;
+  color: #1f5156;
+  font-weight: bold;
+`;
 
 export const RegisterForm = styled.form`
   display: flex;

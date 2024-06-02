@@ -83,9 +83,16 @@ export const Loading = styled.div`
 `;
 
 export const Logo = styled.img`
-  width: 80px; /* Zmniejszenie szerokości logo */
+  width: 100px; /* Zmniejszenie szerokości logo */
   height: auto;
   margin-bottom: 8px; /* Zmniejszenie marginesu od dołu */
+`;
+export const Subtitle = styled.h2`
+  font-size: 1.0em;
+  font-weight: normal;
+  margin-top: -10px;
+  color: #1f5156;
+  font-weight: bold;
 `;
 
 export const LogoContainer = styled.div`

@@ -1,12 +1,13 @@
 import React from "react";
-import { LoaderContainer,AnimatedLogo } from "./styled";
+import { LoaderContainer, LoaderCircle, AnimatedLogo, ProgressText } from "./styled";
 import logo from "../../Images/logo2.png"; // Import logo image
 
-
-
-const Loader = () => (
+const Loader = ({ progress }) => (
   <LoaderContainer>
-    <AnimatedLogo src={logo} alt="Loading..." />
+    <LoaderCircle>
+      <AnimatedLogo src={logo} alt="Loading..." />
+      <ProgressText>{Math.round(progress)}%</ProgressText>
+    </LoaderCircle>
   </LoaderContainer>
 );
 

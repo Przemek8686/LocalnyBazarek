@@ -35,7 +35,7 @@ export const ContactBox = styled.div`
 `;
 
 export const Logo = styled.img`
-  width: 140px;
+  width: 100px;
   margin-top: 10px;
   height: auto;
 
@@ -134,6 +134,13 @@ export const Title = styled.h1`
     font-size: 1.2em;
     margin-top: 3px;
   }
+`;
+export const Subtitle = styled.h2`
+  font-size: 1.0em;
+  font-weight: normal;
+  margin-top: -10px;
+  color: #1f5156;
+  font-weight: bold;
 `;
 
 export const ContactInformation = styled.h2`

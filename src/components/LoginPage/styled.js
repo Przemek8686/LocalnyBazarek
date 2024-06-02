@@ -40,23 +40,33 @@ export const LogoContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 20px;
+  margin-bottom: 1px;
+  margin-top: 1px;
 `;
 
 export const Logo = styled.img`
   width: 100px;
   height: auto;
+  margin-bottom: 0;
 `;
 
 export const Title = styled.h1`
   font-size: 1.5em;
   text-align: center;
   color: #1f5156;
-  
-  @media (max-width: 480px) {
-    font-size:1.2em;
+  margin-top: 1px;
+
+  @media (max-width: 768px) {
+    font-size: 1.2em;
   }
 
+  @media (max-width: 480px) {
+    font-size: 1em;
+  }
+
+  @media (max-width: 400px) {
+    font-size: 0.9em;
+  }
 `;
 
 export const LoginForm = styled.form`
@@ -155,4 +165,12 @@ export const LoginTitle = styled.h1`
   @media (max-width: 480px) {
     font-size:1.6em;
   }
+`;
+
+export const Subtitle = styled.h2`
+  font-size: 1.0em;
+  font-weight: normal;
+  margin-top: -10px;
+  color: #1f5156;
+  font-weight: bold;
 `;

@@ -4,7 +4,7 @@ import { collection, addDoc } from "firebase/firestore";
 import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import { getAuth } from "firebase/auth"; // Import getAuth
 
-import { Container, Form,CheckIcon, LogoContainer, Logo, Title, SuccessMessage, Loading, Input, TextArea, CategorySelect, Button } from "./styled";
+import { Container, Form, CheckIcon, LogoContainer, Logo, Title, Subtitle, SuccessMessage, Loading, Input, TextArea, CategorySelect, Button } from "./styled";
 import logo from "../../Images/logo2.png";
 
 const AddProductForm = () => {
@@ -79,6 +79,7 @@ const AddProductForm = () => {
         <LogoContainer>
           <Logo src={logo} alt="Logo" />
           <Title>Lokalny Bazarek</Title>
+          <Subtitle>Powiat słupecki</Subtitle>
         </LogoContainer>
         {success ? (
           <SuccessMessage>
@@ -135,7 +136,7 @@ const AddProductForm = () => {
               <option value="przetwory">Przetwory</option>
               <option value="wypieki">Wypieki</option>
               <option value="rośliny ozdobne">Rośliny ozdobne</option>
-              <option value="pozostale">Pozostałe</option>
+              <option value="pozostałe">Pozostałe</option>
             </CategorySelect>
             <Input
               type="text"

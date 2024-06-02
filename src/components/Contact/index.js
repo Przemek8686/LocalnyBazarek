@@ -1,5 +1,5 @@
 import React from 'react';
-import { ContactContainer, ContactInformation, ContactBox, Title, ContactInfo, Logo, ContactDetails, SocialIcons, LogoContainer } from './styled';
+import { ContactContainer, ContactInformation, ContactBox, Title, ContactInfo, Logo, ContactDetails, SocialIcons, LogoContainer,Subtitle } from './styled';
 import logo from '../../Images/logo2.png';
 import { FaFacebook, FaTiktok, FaYoutube } from 'react-icons/fa'; // Importuj ikony z biblioteki react-icons
 
@@ -10,15 +10,14 @@ const Contact = () => {
         <LogoContainer>
           <Logo src={logo} alt="Logo" />
           <Title>Lokalny Bazarek</Title>
+          <Subtitle>Powiat słupecki</Subtitle>
         </LogoContainer>
         <ContactInfo>
-          <ContactInformation>Dane kontaktowe</ContactInformation>
+          <ContactInformation>Kontakt</ContactInformation>
           <ContactDetails>
-            <p>Imię i nazwisko:Przemysław Krawczyński</p>
+           
             <p>Email: lokalnybazarek@gmail.com</p>
-            <p>Numer telefonu: +31633652508,
-              +48669708583
-            </p>
+           
           </ContactDetails>
           <SocialIcons>
             {/* Ikony będące linkami do profili na różnych platformach */}

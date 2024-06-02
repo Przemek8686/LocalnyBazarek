@@ -26,7 +26,25 @@ margin: 10% 30%;
 `;
 
  export const Logo = styled.img`
-  width: 150px;
+  width: 100px;
   height: auto;
-  margin-bottom: 20px;
+margin-bottom:3px;
+`;
+export const Subtitle = styled.h2`
+  font-size: 1.0em;
+  font-weight: normal;
+  margin-top: -10px;
+  color: #1f5156;
+  font-weight: bold;
+`;
+export const Title = styled.h1`
+  font-size: 1.5em;
+  text-align: center;
+  color: #1f5156;
+  margin-top: 5px; /* Zmieniony margines */
+
+  @media screen and (max-width: 400px) {
+    font-size: 1.2em;
+    margin-top: 3px;
+  }
 `;

@@ -15,8 +15,9 @@ export const InfoContainer = styled.div`
 `;
 
 export const Logo = styled.img`
-  max-width: 140px;
-  
+  width: 100px;
+  height: auto;
+  margin-bottom: 0;
 `;
 
 export const InfoContent = styled.div`
@@ -54,6 +55,12 @@ export const Title = styled.h1`
   text-align: center;
   color: #1f5156;
   margin-top: 5px; /* Zmieniony margines */
+`;
+export const Title1 = styled.h1`
+  font-size: 1.0em;
+  text-align: center;
+  color: #1f5156;
+  margin-top: 0px; /* Zmieniony margines */
 `;
 export const ContactInformation = styled.h2`
   /* Styl dla informacji kontaktowych */

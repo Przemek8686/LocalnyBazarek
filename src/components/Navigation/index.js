@@ -8,7 +8,8 @@ import {
   StyledLink,
   MenuIcon,
   NavLinksContainer,
-  StyledLogoLink
+  StyledLogoLink, 
+  Title1
 } from "./styled";
 import logo from "../../Images/logo2.png";
 
@@ -26,12 +27,13 @@ const Navigation = () => {
   return (
     <NavigationBar>
       <TitleContainer>  
-        <StyledLogoLink to="/">
-        <Logo src={logo} alt="Logo" />
-        <Title>Lokalny Bazarek</Title>
-      </StyledLogoLink>
-
-
+      <StyledLogoLink to="/">
+          <Logo src={logo} alt="Logo" />
+          <div>
+            <Title>Lokalny Bazarek</Title>
+            <Title1>Powiat słupecki</Title1>
+          </div>
+        </StyledLogoLink>
       </TitleContainer>
       <Spacer />
       <MenuIcon onClick={toggleMenu}>

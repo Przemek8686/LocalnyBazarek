@@ -3,7 +3,7 @@ import { getAuth, createUserWithEmailAndPassword, updateProfile } from 'firebase
 
 import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
 import { storage } from '../FirebaseConfig';
-import { Container, RegisterTitle, RegisterForm, Loading, WelcomeMessage, LogoContainer, Logo, Title, Input, Button } from "./styled";
+import { Container, RegisterTitle, RegisterForm, Loading, WelcomeMessage, LogoContainer, Logo, Title, Input, Button, Subtitle } from "./styled";
 import { useNavigate } from 'react-router-dom';
 import logo from "../../Images/logo2.png";
 
@@ -69,6 +69,7 @@ const RegisterPage = () => {
             <LogoContainer>
               <Logo src={logo} alt="Logo" />
               <Title>Lokalny Bazarek</Title>
+              <Subtitle>Powiat słupecki</Subtitle>
             </LogoContainer>
 
             <Input

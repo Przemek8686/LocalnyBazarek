@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { getAuth, signInWithEmailAndPassword, sendPasswordResetEmail } from 'firebase/auth';
-import { Container, Login, Logo, Button2, LoginTitle, LoginForm, WelcomeMessage, Input, Button, Loading, LogoContainer, Title } from './styled';
+import { Container, Login, Logo, Button2, LoginTitle, LoginForm, WelcomeMessage, Input, Button, Loading, LogoContainer, Title, Subtitle } from './styled';
 import logo from "../../Images/logo2.png";
 
 const LoginPage = () => {
@@ -68,6 +68,7 @@ const LoginPage = () => {
         <LogoContainer>
           <Logo src={logo} alt="Logo" />
           <Title>Lokalny Bazarek</Title>
+          <Subtitle>Powiat słupecki</Subtitle>
         </LogoContainer>
         <LoginForm>
           {user ? (
