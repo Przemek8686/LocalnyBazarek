@@ -50,6 +50,9 @@ export const StyledLink = styled(NavLink)`
   @media (max-width: 768px) {
     font-size: 0.7em;
   }
+  @media (max-width: 450px) {
+    font-size: 0.8em;
+  }
   &.active {
     border: 2px solid #f5b921;
     border-radius: 10px;
@@ -76,12 +79,17 @@ export const Title = styled.div`
   font-size: 1.5em;
   font-weight: bold;
   margin-left: 10px;
+  white-space: nowrap;
 `;
 
 export const Title1 = styled.div`
   font-size: 1.0em;
   font-weight: bold;
   margin-left: 40px;
+  white-space: nowrap;
+  @media (max-width: 450px) {
+    margin-left: 10px;
+  }
 `;
 
 export const MenuIcon = styled.div`
