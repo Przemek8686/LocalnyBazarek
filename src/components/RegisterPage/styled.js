@@ -76,7 +76,7 @@ export const Input = styled.input`
   border: 2px solid #1f5156;
   border-radius: 5px;
   box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
-  font-size: 16px;
+  font-size: 14px;
 `;
 
 export const Button = styled.button`
