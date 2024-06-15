@@ -83,17 +83,19 @@ export const UserProfile = styled.div`
   left: 6px;
   display: flex;
   flex-direction: row;
-  margin-top:60px;
+  margin-top:66px;
   font-weight: bold;
 `;
 
 export const UserImage = styled.img`
-width: 30px;
-height: 27px;
+  width: 30px;
+  height: 27px;
   border-radius: 50%;
   margin-bottom: 5px;
-
+  border: 2px solid black; /* Added black border */
 `;
+
+
 
 export const UserName = styled.span`
   font-size: 1.1em;
@@ -139,6 +141,10 @@ export const AdditionalInfo = styled.div`
 `;
 
 export const LocationInfo = styled.div`
+  font-size: 0.8em;
+  font-weight: bold;
+`;
+export const Voivodeship = styled.div`
   font-size: 0.8em;
   font-weight: bold;
 `;

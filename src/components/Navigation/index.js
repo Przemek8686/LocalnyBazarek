@@ -8,8 +8,7 @@ import {
   StyledLink,
   MenuIcon,
   NavLinksContainer,
-  StyledLogoLink, 
-  Title1
+  StyledLogoLink
 } from "./styled";
 import logo from "../../Images/logo2.png";
 
@@ -31,7 +30,7 @@ const Navigation = () => {
           <Logo src={logo} alt="Logo" />
           <div>
             <Title>Lokalny Bazarek</Title>
-            <Title1>Powiat słupecki</Title1>
+            
           </div>
         </StyledLogoLink>
       </TitleContainer>

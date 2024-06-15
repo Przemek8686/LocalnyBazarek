@@ -47,6 +47,7 @@ const OfferDetailsPage = () => {
           <StyledInfo>Kontakt: {offerDetails.contact}</StyledInfo>
           <StyledInfo>Kategoria: {offerDetails.category}</StyledInfo>
           <StyledInfo>Lokalizacja: {offerDetails.location}</StyledInfo>
+          <StyledInfo>Województwo: {offerDetails.voivodeship} </StyledInfo>
           <UserContainer>
             {offerDetails.userImage && (
               <UserImage src={offerDetails.userImage} alt={offerDetails.userName} />

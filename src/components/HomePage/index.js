@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useCallback } from "react";
 import { db } from "../FirebaseConfig";
 import { collection, query, orderBy, onSnapshot, deleteDoc, doc } from "firebase/firestore";
-import { SearchInput, ProductGrid, ProductTile, ProductImageContainer, ProductImage, ProductTitle, ProductPrice, ProductUnit, UserProfile, UserImage, UserName, ContactInfo, AdditionalInfo, LocationInfo, Button } from "./styled";
+import { SearchInput, ProductGrid, ProductTile, ProductImageContainer, ProductImage, ProductTitle, ProductPrice, ProductUnit, UserProfile, UserImage, UserName, ContactInfo, AdditionalInfo, LocationInfo, Button,Voivodeship } from "./styled";
 import { Link } from "react-router-dom";
 import { getAuth } from "firebase/auth";
 import ConfirmationModal from "../ConfirmationModal";
@@ -19,7 +19,8 @@ const Offer = () => {
       (product.title && product.title.toLowerCase().includes(searchTerm.toLowerCase())) ||
       (product.category && product.category.toLowerCase().includes(searchTerm.toLowerCase())) ||
       (product.userName && product.userName.toLowerCase().includes(searchTerm.toLowerCase())) ||
-      (product.location && product.location.toLowerCase().includes(searchTerm.toLowerCase()))
+      (product.location && product.location.toLowerCase().includes(searchTerm.toLowerCase())) ||
+      (product.voivodeship && product.voivodeship.toLowerCase().includes(searchTerm.toLowerCase()))
     );
     setFilteredProducts(filtered);
   }, [searchTerm]);
@@ -72,7 +73,7 @@ const Offer = () => {
       <form onSubmit={handleSearch}>
         <SearchInput
           type="text"
-          placeholder="Szukaj po nazwie, kategorii, użytkowniku, lokalizacji..."
+          placeholder="Szukaj nazwa,kategoria,użytkownik,lokalizacja, województwo"
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
         />
@@ -98,7 +99,7 @@ const Offer = () => {
                 <ContactInfo>Kontakt: {product.contact}</ContactInfo>
                 <AdditionalInfo>Kategoria: {product.category}</AdditionalInfo>
                 <LocationInfo>Lokalizacja: {product.location}</LocationInfo>
-              
+                <Voivodeship>Województwo:  {product.voivodeship} </Voivodeship>
               </ProductTile>
             </Link>
             {auth.currentUser && auth.currentUser.displayName === product.userName && (

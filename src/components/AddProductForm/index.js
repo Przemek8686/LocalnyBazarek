@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import { db, storage } from "../FirebaseConfig";
 import { collection, addDoc } from "firebase/firestore";
 import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
-import { getAuth } from "firebase/auth"; // Import getAuth
+import { getAuth } from "firebase/auth";
 
-import { Container, Form, CheckIcon, LogoContainer, Logo, Title, Subtitle, SuccessMessage, Loading, Input, TextArea, CategorySelect, Button } from "./styled";
+import { Container, Form, CheckIcon, LogoContainer, Logo, Title, SuccessMessage, Loading, Input, TextArea, CategorySelect, Button } from "./styled";
 import logo from "../../Images/logo2.png";
 
 const AddProductForm = () => {
@@ -16,15 +16,16 @@ const AddProductForm = () => {
   const [contact, setContact] = useState("");
   const [category, setCategory] = useState("");
   const [location, setLocation] = useState("");
+  const [voivodeship, setVoivodeship] = useState(""); // New state for voivodeship
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
-  const auth = getAuth(); // Pobierz obiekt autoryzacji
+  const auth = getAuth();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
 
-    if (!title || !image || !category || !location) {
+    if (!title || !image || !category || !location || !voivodeship) {
       setLoading(false);
       return;
     }
@@ -35,7 +36,6 @@ const AddProductForm = () => {
 
       const imageUrl = await getDownloadURL(imageRef);
 
-      // Dodaj ofertę z informacją o użytkowniku
       await addDoc(collection(db, "products"), {
         title,
         description,
@@ -45,9 +45,10 @@ const AddProductForm = () => {
         contact,
         category,
         location,
+        voivodeship, // Include voivodeship in the document
         createdAt: new Date(),
-        userName: auth.currentUser.displayName, // Dodaj nazwę użytkownika
-        userImage: auth.currentUser.photoURL, // Dodaj zdjęcie użytkownika
+        userName: auth.currentUser.displayName,
+        userImage: auth.currentUser.photoURL,
       });
 
       resetForm();
@@ -70,6 +71,7 @@ const AddProductForm = () => {
     setContact("");
     setCategory("");
     setLocation("");
+    setVoivodeship("");
     setImage(null);
   };
 
@@ -79,7 +81,6 @@ const AddProductForm = () => {
         <LogoContainer>
           <Logo src={logo} alt="Logo" />
           <Title>Lokalny Bazarek</Title>
-          <Subtitle>Powiat słupecki</Subtitle>
         </LogoContainer>
         {success ? (
           <SuccessMessage>
@@ -136,6 +137,10 @@ const AddProductForm = () => {
               <option value="przetwory">Przetwory</option>
               <option value="wypieki">Wypieki</option>
               <option value="rośliny ozdobne">Rośliny ozdobne</option>
+              <option value="rękodzieło">Rękodzieło</option>
+              <option value="nabiał">Nabiał</option>
+              <option value="drewno">Drewno</option>
+              <option value="wyroby mięsne">Wyroby mięsne</option>
               <option value="pozostałe">Pozostałe</option>
             </CategorySelect>
             <Input
@@ -144,6 +149,28 @@ const AddProductForm = () => {
               value={location}
               onChange={(e) => setLocation(e.target.value)}
             />
+            <CategorySelect
+              value={voivodeship} // New select input for voivodeship
+              onChange={(e) => setVoivodeship(e.target.value)}
+            >
+              <option value="">Wybierz województwo</option>
+              <option value="dolnośląskie">Dolnośląskie</option>
+              <option value="kujawsko-pomorskie">Kujawsko-Pomorskie</option>
+              <option value="lubelskie">Lubelskie</option>
+              <option value="lubuskie">Lubuskie</option>
+              <option value="łódzkie">Łódzkie</option>
+              <option value="małopolskie">Małopolskie</option>
+              <option value="mazowieckie">Mazowieckie</option>
+              <option value="opolskie">Opolskie</option>
+              <option value="podkarpackie">Podkarpackie</option>
+              <option value="podlaskie">Podlaskie</option>
+              <option value="pomorskie">Pomorskie</option>
+              <option value="śląskie">Śląskie</option>
+              <option value="świętokrzyskie">Świętokrzyskie</option>
+              <option value="warmińsko-mazurskie">Warmińsko-Mazurskie</option>
+              <option value="wielkopolskie">Wielkopolskie</option>
+              <option value="zachodniopomorskie">Zachodniopomorskie</option>
+            </CategorySelect>
             <Button type="submit">Dodaj produkt</Button>
           </>
         )}

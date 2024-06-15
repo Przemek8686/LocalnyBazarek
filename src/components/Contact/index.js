@@ -1,5 +1,5 @@
 import React from 'react';
-import { ContactContainer, ContactInformation, ContactBox, Title, ContactInfo, Logo, ContactDetails, SocialIcons, LogoContainer,Subtitle } from './styled';
+import { ContactContainer, ContactInformation, ContactBox, Title, ContactInfo, Logo, ContactDetails, SocialIcons, LogoContainer } from './styled';
 import logo from '../../Images/logo2.png';
 import { FaFacebook, FaTiktok, FaYoutube } from 'react-icons/fa'; // Importuj ikony z biblioteki react-icons
 
@@ -10,7 +10,7 @@ const Contact = () => {
         <LogoContainer>
           <Logo src={logo} alt="Logo" />
           <Title>Lokalny Bazarek</Title>
-          <Subtitle>Powiat słupecki</Subtitle>
+         
         </LogoContainer>
         <ContactInfo>
           <ContactInformation>Kontakt</ContactInformation>

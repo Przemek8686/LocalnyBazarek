@@ -107,6 +107,7 @@ export const UserImage = styled.img`
   height: 50px;
   border-radius: 50%;
   margin-right: 10px;
+  border: 2px solid black; /* Added black border */
 
   @media screen and (max-width: 400px) {
     /* Style changes for very small screens */
@@ -143,18 +144,26 @@ export const Modal = styled.div`
   @media screen and (max-width: 400px) {
     /* Style changes for very small screens */
     padding: 6px;
-    width: 90%;
+    width: 100%;
   }
 `;
 
 export const ModalContent = styled.div`
-  margin: auto;
   display: block;
-  width: 80%;
-  max-width: 548px;
-  border: 1px solid #888;
-  background-color: #fefefe;
-  padding: 9px;
+  margin: auto;
+  
+  padding: 20px; /* Increase padding for a larger look */
+  width: 85%; /* Increase the width slightly */
+  max-width: 600px; /* Increase max-width for a larger modal */
+  background-color: #fff; /* Ensure a background color for the modal content */
+  border-radius: 10px; /* Optional: add some rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: add a shadow for better visibility */
+
+  /* Center the modal vertically and horizontally */
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 `;
 
 export const CloseButton = styled.span`

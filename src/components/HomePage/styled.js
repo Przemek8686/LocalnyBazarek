@@ -142,7 +142,10 @@ export const LocationInfo = styled.div`
   font-size: 0.8em;
   font-weight: bold;
 `;
-
+export const Voivodeship = styled.div`
+  font-size: 0.8em;
+  font-weight: bold;
+`;
 export const SearchInput = styled.input`
   padding: 0.5em;
   margin: 0 auto;
