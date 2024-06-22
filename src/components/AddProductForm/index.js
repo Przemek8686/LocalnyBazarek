@@ -4,7 +4,7 @@ import { collection, addDoc } from "firebase/firestore";
 import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import { getAuth } from "firebase/auth";
 
-import { Container, Form, CheckIcon, LogoContainer, Logo, Title, SuccessMessage, Loading, Input, TextArea, CategorySelect, Button } from "./styled";
+import { Container, Form, CheckIcon, LogoContainer, Logo, Title, SuccessMessage, Loading, Input, TextArea, CategorySelect, Button, CheckboxLabel, CheckboxContainer } from "./styled";
 import logo from "../../Images/logo2.png";
 
 const AddProductForm = () => {
@@ -16,7 +16,11 @@ const AddProductForm = () => {
   const [contact, setContact] = useState("");
   const [category, setCategory] = useState("");
   const [location, setLocation] = useState("");
-  const [voivodeship, setVoivodeship] = useState(""); // New state for voivodeship
+  const [voivodeship, setVoivodeship] = useState("");
+  const [bio, setBio] = useState(false);
+  const [localDelivery, setLocalDelivery] = useState(false);
+  const [courierDelivery, setCourierDelivery] = useState(false);
+  const [pickup, setPickup] = useState(false);
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
   const auth = getAuth();
@@ -45,7 +49,11 @@ const AddProductForm = () => {
         contact,
         category,
         location,
-        voivodeship, // Include voivodeship in the document
+        voivodeship,
+        bio,
+        localDelivery,
+        courierDelivery,
+        pickup,
         createdAt: new Date(),
         userName: auth.currentUser.displayName,
         userImage: auth.currentUser.photoURL,
@@ -73,6 +81,10 @@ const AddProductForm = () => {
     setLocation("");
     setVoivodeship("");
     setImage(null);
+    setBio(false);
+    setLocalDelivery(false);
+    setCourierDelivery(false);
+    setPickup(false);
   };
 
   return (
@@ -150,7 +162,7 @@ const AddProductForm = () => {
               onChange={(e) => setLocation(e.target.value)}
             />
             <CategorySelect
-              value={voivodeship} // New select input for voivodeship
+              value={voivodeship}
               onChange={(e) => setVoivodeship(e.target.value)}
             >
               <option value="">Wybierz województwo</option>
@@ -171,6 +183,40 @@ const AddProductForm = () => {
               <option value="wielkopolskie">Wielkopolskie</option>
               <option value="zachodniopomorskie">Zachodniopomorskie</option>
             </CategorySelect>
+            <CheckboxContainer>
+              <CheckboxLabel>
+                <input
+                  type="checkbox"
+                  checked={bio}
+                  onChange={(e) => setBio(e.target.checked)}
+                />
+                Produkt Bio
+              </CheckboxLabel>
+              <CheckboxLabel>
+                <input
+                  type="checkbox"
+                  checked={localDelivery}
+                  onChange={(e) => setLocalDelivery(e.target.checked)}
+                />
+                Dowóz w okolicy
+              </CheckboxLabel>
+              <CheckboxLabel>
+                <input
+                  type="checkbox"
+                  checked={courierDelivery}
+                  onChange={(e) => setCourierDelivery(e.target.checked)}
+                />
+                Wysyłka kurierem
+              </CheckboxLabel>
+              <CheckboxLabel>
+                <input
+                  type="checkbox"
+                  checked={pickup}
+                  onChange={(e) => setPickup(e.target.checked)}
+                />
+                Odbiór osobiście
+              </CheckboxLabel>
+            </CheckboxContainer>
             <Button type="submit">Dodaj produkt</Button>
           </>
         )}

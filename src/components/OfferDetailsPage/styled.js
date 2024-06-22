@@ -116,7 +116,18 @@ export const UserImage = styled.img`
   }
 
 `;
+export const OptionsContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+  
+`;
 
+export const OptionIcon = styled.img`
+  width: 30px;
+  height: 30px;
+  margin: 0 5px;
+`;
 export const UserName = styled.span`
   font-size: 1.2em;
   font-weight: bold;

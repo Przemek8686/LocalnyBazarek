@@ -19,28 +19,6 @@ export const ProductGrid = styled.div`
   }
 `;
 
-export const Button = styled.button`
-  padding: 10px 20px;
-  background-color: #1f5156;
-  color: white;
-  border: 3px solid white;
-  cursor: pointer;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 10px 25%;
-  transition-duration: 0.4s;
-  margin-bottom: 40px;
-  border-radius: 12px;
-
-  &:hover {
-    background-color: #378d95;
-    color: white;
-    border: 2px solid #4caf50;
-  }
-`;
-
 export const ProductTile = styled.div`
   position: relative;
   border: 1px solid #ccc;
@@ -49,12 +27,12 @@ export const ProductTile = styled.div`
   transition: transform 0.3s ease-in-out;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
   background-color: white;
-  height: 435px;
+  height: 480px;
   border: 4px solid #1f5156;
   overflow: hidden;
 
   &:hover {
-    transform: scale(1.05);
+    transform: scale(1.03);
   }
 
   &::before {
@@ -71,39 +49,13 @@ export const ProductTile = styled.div`
 
   @media (min-width: 768px) {
     &:hover::before {
-      opacity: 1;
+      opacity: 2;
     }
   }
 `;
 
-
-export const UserProfile = styled.div`
-  position: absolute;
-  margin-bottom: 10px;
-  left: 6px;
-  display: flex;
-  flex-direction: row;
-  margin-top:66px;
-  font-weight: bold;
-`;
-
-export const UserImage = styled.img`
-  width: 30px;
-  height: 27px;
-  border-radius: 50%;
-  margin-bottom: 5px;
-  border: 2px solid black; /* Added black border */
-`;
-
-
-
-export const UserName = styled.span`
-  font-size: 1.1em;
-  margin-left:5px;
-`;
-
 export const ProductImageContainer = styled.div`
-  width: 100%;
+ width: 100%;
   height: 200px;
   overflow: hidden;
 `;
@@ -111,42 +63,67 @@ export const ProductImageContainer = styled.div`
 export const ProductImage = styled.img`
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Dostosowanie obrazu do wymiarów kontenera */
+  object-fit: cover;
 `;
 
 export const ProductTitle = styled.h2`
-  font-size: 1.2em;
-  margin: 0.5em 0;
+  font-size: 18px;
+  margin: 10px 0;
+  
+   
 `;
 
 export const ProductPrice = styled.p`
-  font-size: 1.0em;
+  font-size: 16px;
+  margin: 5px 0;
+  color: red;
   font-weight: bold;
-  color:red;
 `;
 
 export const ProductUnit = styled.p`
-  font-size: 1em;
+  font-size: 14px;
+  margin: 5px 0;
+ 
+`;
+
+export const UserProfile = styled.div`
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+`;
+
+export const UserImage = styled.img`
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin-right: 10px;
+  border: 2px solid #1f5156; 
+`;
+
+export const UserName = styled.span`
+  font-size: 14px;
   font-weight: bold;
 `;
 
-export const ContactInfo = styled.div`
-  font-size: 0.8em;
+export const ContactInfo = styled.p`
+ font-size: 0.8em;
   font-weight: bold;
+  margin: 5px 0;
 `;
 
-export const AdditionalInfo = styled.div`
-  font-size: 0.8em;
-  font-weight: bold;
+export const AdditionalInfo = styled.p`
+  font-size: 14px;
+  margin: 5px 0;
 `;
 
-export const LocationInfo = styled.div`
-  font-size: 0.8em;
-  font-weight: bold;
+export const LocationInfo = styled.p`
+  font-size: 14px;
+  margin: 5px 0;
 `;
-export const Voivodeship = styled.div`
-  font-size: 0.8em;
-  font-weight: bold;
+
+export const Voivodeship = styled.p`
+  font-size: 14px;
+  margin: 5px 0;
 `;
 
 export const SearchInput = styled.input`
@@ -159,4 +136,38 @@ export const SearchInput = styled.input`
   height: 20px;
   display: block;
 `;
+export const Button = styled.button`
+  padding: 10px 20px;
+  background-color: #1f5156;
+  color: white;
+  border: 3px solid white;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 25%;
+  margin-left:90px;
+  transition-duration: 0.4s;
+  margin-bottom: 40px;
+  border-radius: 12px;
+  margin-top:12px;
 
+  &:hover {
+    background-color: #378d95;
+    color: white;
+    border: 2px solid #4caf50;
+  }
+`;
+
+export const OptionsContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+`;
+
+export const OptionIcon = styled.img`
+  width: 30px;
+  height: 30px;
+  margin: 0 5px;
+`;

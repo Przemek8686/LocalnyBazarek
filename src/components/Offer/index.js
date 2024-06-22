@@ -1,71 +1,84 @@
-import React, { useEffect, useState, useCallback } from "react";
-import { db } from "../FirebaseConfig";
-import { collection, query, orderBy, onSnapshot, deleteDoc, doc } from "firebase/firestore";
-import { SearchInput, ProductGrid, ProductTile, ProductImageContainer, ProductImage, ProductTitle, ProductPrice, ProductUnit, UserProfile, UserImage, UserName, ContactInfo, AdditionalInfo, LocationInfo, Button, Voivodeship } from "./styled";
+import React, { useEffect, useState } from "react";
+import { db, auth } from "../FirebaseConfig";
+import { collection, getDocs, deleteDoc, doc } from "firebase/firestore";
 import { Link } from "react-router-dom";
-import { getAuth } from "firebase/auth";
+
+import {
+  ProductGrid,
+  ProductTile,
+  ProductImageContainer,
+  ProductImage,
+  ProductTitle,
+  ProductPrice,
+  ProductUnit,
+  UserProfile,
+  UserImage,
+  UserName,
+  ContactInfo,
+  AdditionalInfo,
+  LocationInfo,
+  Voivodeship,
+  SearchInput,
+  Button,
+  OptionsContainer,
+  OptionIcon,
+} from "./styled";
+
 import ConfirmationModal from "../ConfirmationModal";
+import BioIcon from "../../Images/bio.png";
+import DeliveryIcon from "../../Images/dowoz.png";
+import CourierIcon from "../../Images/truck.png";
+import PickupIcon from "../../Images/person.png";
 
 const Offer = () => {
   const [products, setProducts] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
-  const [filteredProducts, setFilteredProducts] = useState([]);
   const [showModal, setShowModal] = useState(false);
-  const [deleteProductId, setDeleteProductId] = useState(null);
-  const auth = getAuth();
-
-  const filterProducts = useCallback((productsData) => {
-    const filtered = productsData.filter(product =>
-      (product.title && product.title.toLowerCase().includes(searchTerm.toLowerCase())) ||
-      (product.category && product.category.toLowerCase().includes(searchTerm.toLowerCase())) ||
-      (product.userName && product.userName.toLowerCase().includes(searchTerm.toLowerCase())) ||
-      (product.location && product.location.toLowerCase().includes(searchTerm.toLowerCase())) ||
-      (product.voivodeship && product.voivodeship.toLowerCase().includes(searchTerm.toLowerCase()))
-    );
-    setFilteredProducts(filtered);
-  }, [searchTerm]);
+  const [productIdToDelete, setProductIdToDelete] = useState(null);
 
   useEffect(() => {
-    const q = query(collection(db, "products"), orderBy("createdAt", "desc"));
+    const fetchData = async () => {
+      const querySnapshot = await getDocs(collection(db, "products"));
+      const data = querySnapshot.docs.map((doc) => ({
+        id: doc.id,
+        ...doc.data(),
+      }));
+      setProducts(data);
+    };
 
-    const unsubscribe = onSnapshot(q, (querySnapshot) => {
-      const productsData = [];
+    fetchData();
+  }, []);
 
-      querySnapshot.forEach((doc) => {
-        productsData.push({ ...doc.data(), id: doc.id });
-      });
-
-      setProducts(productsData);
-      filterProducts(productsData);
-    });
-
-    return () => unsubscribe();
-  }, [filterProducts]);
-
-  const handleSearch = (event) => {
-    event.preventDefault();
-    filterProducts(products);
+  const handleDeleteConfirmation = (id) => {
+    setProductIdToDelete(id);
+    setShowModal(true);
   };
 
-  const handleDeleteConfirmation = (productId) => {
-    setShowModal(true);
-    setDeleteProductId(productId);
+  const handleConfirmDelete = async () => {
+    if (productIdToDelete) {
+      await deleteDoc(doc(db, "products", productIdToDelete));
+      setProducts(products.filter((product) => product.id !== productIdToDelete));
+      setShowModal(false);
+      setProductIdToDelete(null);
+    }
   };
 
   const handleCancelDelete = () => {
     setShowModal(false);
-    setDeleteProductId(null);
+    setProductIdToDelete(null);
   };
 
-  const handleConfirmDelete = async () => {
-    try {
-      await deleteDoc(doc(db, "products", deleteProductId));
-      console.log("Document successfully deleted!");
-      setShowModal(false);
-      setDeleteProductId(null);
-    } catch (error) {
-      console.error("Error removing document: ", error);
-    }
+  const handleSearch = (e) => {
+    e.preventDefault();
+    const filtered = products.filter((product) =>
+      product.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      product.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      product.category.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      product.location.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      product.voivodeship.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      product.userName.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+    setProducts(filtered);
   };
 
   return (
@@ -79,7 +92,7 @@ const Offer = () => {
         />
       </form>
       <ProductGrid>
-        {filteredProducts.map((product) => (
+        {products.map((product) => (
           <div key={product.id}>
             <Link
               to={`/offer/${product.id}`}
@@ -91,16 +104,21 @@ const Offer = () => {
                 </ProductImageContainer>
                 <ProductTitle>{product.title}</ProductTitle>
                 <ProductPrice>Cena: {product.price} zł</ProductPrice>
-                <ProductUnit>Waga:{product.unit}</ProductUnit>
+                <ProductUnit>Waga: {product.unit}</ProductUnit>
+                <ContactInfo>Kontakt: {product.contact}</ContactInfo>
+                <AdditionalInfo>Kategoria: {product.category}</AdditionalInfo>
+                <LocationInfo>Lokalizacja: {product.location}</LocationInfo>
+                <Voivodeship>Województwo: {product.voivodeship}</Voivodeship>
                 <UserProfile>
                   <UserImage src={product.userImage} alt={product.userName} />
                   <UserName>{product.userName}</UserName>
                 </UserProfile>
-                <ContactInfo>Kontakt: {product.contact}</ContactInfo>
-                <AdditionalInfo>Kategoria: {product.category}</AdditionalInfo>
-                <LocationInfo>Lokalizacja: {product.location}</LocationInfo>
-                <Voivodeship>Województwo:  {product.voivodeship} </Voivodeship>
-              
+                <OptionsContainer>
+                  {product.bio && <OptionIcon src={BioIcon} alt="Produkt Bio" />}
+                  {product.localDelivery && <OptionIcon src={DeliveryIcon} alt="Dowóz w okolicy" />}
+                  {product.courierDelivery && <OptionIcon src={CourierIcon} alt="Wysyłka kurierem" />}
+                  {product.pickup && <OptionIcon src={PickupIcon} alt="Odbiór osobiście" />}
+                </OptionsContainer>
               </ProductTile>
             </Link>
             {auth.currentUser && auth.currentUser.displayName === product.userName && (

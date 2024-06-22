@@ -1,8 +1,27 @@
 import React from "react";
 import { useParams } from "react-router-dom";
-import { OfferDetailsContainer, OfferTitle, OfferImage, OfferDescription, StyledInfo, UserContainer, UserImage, UserName, Modal, ModalContent, CloseButton } from "./styled";
+import {
+  OfferDetailsContainer,
+  OfferTitle,
+  OfferImage,
+  OfferDescription,
+  StyledInfo,
+  UserContainer,
+  UserImage,
+  UserName,
+  Modal,
+  ModalContent,
+  CloseButton,
+  OptionsContainer,
+  OptionIcon
+} from "./styled";
 import { db } from "../FirebaseConfig";
 import { doc, getDoc } from "firebase/firestore";
+
+import BioIcon from "../../Images/bio.png";
+import DeliveryIcon from "../../Images/dowoz.png";
+import CourierIcon from "../../Images/truck.png";
+import PickupIcon from "../../Images/person.png";
 
 const OfferDetailsPage = () => {
   const { id } = useParams();
@@ -54,12 +73,18 @@ const OfferDetailsPage = () => {
             )}
             <UserName>{offerDetails.userName}</UserName>
           </UserContainer>
+          <OptionsContainer>
+            {offerDetails.bio && <OptionIcon src={BioIcon} alt="Produkt Bio" />}
+            {offerDetails.localDelivery && <OptionIcon src={DeliveryIcon} alt="Dowóz w okolicy" />}
+            {offerDetails.courierDelivery && <OptionIcon src={CourierIcon} alt="Wysyłka kurierem" />}
+            {offerDetails.pickup && <OptionIcon src={PickupIcon} alt="Odbiór osobiście" />}
+          </OptionsContainer>
         </>
       ) : (
         <p>Loading...</p>
       )}
       <Modal modalOpen={modalOpen} onClick={() => setModalOpen(false)}>
-        {offerDetails && offerDetails.imageUrl && ( // Sprawdzenie, czy offerDetails i jego właściwość imageUrl istnieją
+        {offerDetails && offerDetails.imageUrl && (
           <ModalContent>
             <CloseButton onClick={() => setModalOpen(false)}>&times;</CloseButton>
             <OfferImage src={offerDetails.imageUrl} alt={offerDetails.title} />
