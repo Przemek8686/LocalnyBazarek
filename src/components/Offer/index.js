@@ -22,6 +22,10 @@ import {
   Button,
   OptionsContainer,
   OptionIcon,
+  IconImage,
+  IconsContainer,
+  IconWithDescription,
+  IconDescription
 } from "./styled";
 
 import ConfirmationModal from "../ConfirmationModal";
@@ -83,10 +87,30 @@ const Offer = () => {
 
   return (
     <>
+       <IconsContainer>
+        <IconWithDescription>
+          <IconImage src={BioIcon} alt="Produkt Bio" />
+          <IconDescription>Produkt Bio</IconDescription>
+        </IconWithDescription>
+        <IconWithDescription>
+          <IconImage src={DeliveryIcon} alt="Dowóz w okolicy" />
+          <IconDescription>Dowóz w okolicy</IconDescription>
+        </IconWithDescription>
+        <IconWithDescription>
+          <IconImage src={CourierIcon} alt="Wysyłka kurierem" />
+          <IconDescription>Wysyłka kurierem</IconDescription>
+        </IconWithDescription>
+        <IconWithDescription>
+          <IconImage src={PickupIcon} alt="Odbiór osobiście" />
+          <IconDescription>Odbiór osobiście</IconDescription>
+        </IconWithDescription>
+      </IconsContainer>
+
+
       <form onSubmit={handleSearch}>
         <SearchInput
           type="text"
-          placeholder="Szukaj nazwa,kategoria,użytkownik,lokalizacja itd."
+          placeholder="Szukaj nazwa, kategoria, użytkownik, lokalizacja itd."
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
         />

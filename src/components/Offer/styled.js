@@ -171,3 +171,29 @@ export const OptionIcon = styled.img`
   height: 30px;
   margin: 0 5px;
 `;
+export const IconsContainer = styled.div`
+  display: flex;
+  justify-content: space-around;
+  margin: 20px auto;
+  background-color:white;
+  border: 3px solid #1f5156;
+  border-radius: 20px;
+  padding:10px;
+  max-width:500px;
+`;
+
+export const IconWithDescription = styled.div`
+  text-align: center;
+  margin: 0 5px;
+  margin-top:10px;
+`;
+
+export const IconImage = styled.img`
+  width: 30px;
+  height: 30px;
+`;
+
+export const IconDescription = styled.p`
+  margin-top: 2px;
+  font-size: 14px;
+`;
